@@ -1,0 +1,594 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.88;
+    color: #3d3a35;
+    margin: 0;
+}
+
+body.page_index {
+    padding-top: 0 !important;
+}
+
+*, *:before, *:after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+strong {
+    font-weight: 700;
+}
+
+a {
+    background-color: transparent;
+    color: #0A4B7D;
+}
+
+a:active, a:hover {
+    outline: 0;
+    color: #073457;
+}
+
+a:hover {
+    -webkit-transition: color .3s, background-color .3s, box-shadow .3s;
+    transition: color .3s, background-color .3s, box-shadow .3s;
+}
+
+a:visited,
+a:active {
+    text-decoration: none !important;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 0;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+button {
+    overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.btn,
+.btn-alt {
+    display: inline-block;
+    position: relative;
+    min-width: 200px;
+    font-family: Lato, sans-serif;
+    font-size: 0.75em;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0.9375em 0.625em;
+    padding: 0.75em;
+    border: none;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+}
+
+.btn {
+    color: #fff;
+    background-color: #0A4B7D;
+}
+
+.btn-alt {
+    color: #0A4B7D;
+    background-color: #fff;
+}
+
+.btn:hover,
+.btn-alt:hover {
+    background-color: #073457;
+    color: #fff;
+}
+
+input {
+    line-height: normal;
+}
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: transparent !important;
+}
+
+textarea {
+    overflow: auto;
+}
+
+fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+h1, h2.seo {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+h2 {
+    font-family: Lato, sans-serif;
+    font-size: 2.125em;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1;
+}
+
+h3 {
+    font-family: Lato, sans-serif;
+    font-size: 1.375em;
+    line-height: 1.36;
+    margin: 0;
+}
+
+body.page_index header {
+    position: absolute;
+    background-color: transparent;
+}
+
+header {
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    background-color: #ffffff;
+    text-align: center;
+    -webkit-transition: margin .3s;
+    transition: margin 0.3s;
+}
+
+/* Menu */
+nav {
+    font-size: 0.9375em;
+    font-weight: 400;
+    line-height: 1;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 0.625em;
+    padding-bottom: 0.625em;
+    background-color: #0A4B7D;
+}
+
+/* Small Device Menu */
+nav #responsive-nav {
+    display: none;
+    width: 100%;
+    float: none;
+}
+
+nav #responsive-nav a {
+    position: relative;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+nav ul {
+    text-align: center;
+    vertical-align: top;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav li:before {
+    content: none;
+}
+
+nav li a {
+    display: block;
+    color: #ffffff;
+    font-size: 1.125em;
+    padding: 0.375em 0.9375em;
+    transition: background .3s, color .3s;
+    text-transform: uppercase;
+}
+
+nav ul li:hover a {
+    color: #fff;
+    background: #073457;
+    text-decoration: none;
+}
+
+nav.opened > ul > li {
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+nav.opened > ul > li > a {
+    width: 100%;
+    padding: 0.3125em 0;
+}
+
+#main-header {
+    padding: 0.3125em 0;
+    transition: min-height 0.3s;
+}
+
+#main-header > div {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: start;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+#main-header .header-contact {
+    text-align: center;
+    width: 100%;
+    flex-basis: 400px;
+    line-height: 1;
+}
+
+#main-header .header-contact > a {
+    font-size: 2.0625em;
+    color: #0A4B7D;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+}
+
+#main-header .header-contact .email {
+    font-size: 1.125em;
+    color: #0A4B7D;
+}
+
+#main-header .header-contact address {
+    line-height: 1.2;
+    margin-bottom: 0.9375em;
+}
+
+#main-header .header-contact address a {
+    display: inline-block;
+    vertical-align: middle;
+    transition: color .3s;
+    color: #3d3a35;
+    font-family: Lato, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+#main-header .header-contact > a:hover,
+#main-header .header-contact address a:hover {
+    color: #073457;
+}
+
+#main-header .header-contact .btn {
+    display: block;
+    max-width: 250px;
+    width: 100%;
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: 400;
+    border-radius: 5px;
+    margin: 0 auto;
+    line-height: 1;
+    padding: 0.75em;
+}
+
+#main-header .header-contact .btn strong {
+    display: block;
+    font-weight: 900;
+    font-size: 1.125em;
+    padding-bottom: 0.5em;
+}
+
+/* Website logo */
+#main-header > div > a {
+    max-width: 440px;
+    z-index: 500;
+    transition: max-width .3s;
+}
+
+#main-header > div > a img {
+    width: 100%;
+    transition: width .3s;
+}
+
+footer {
+    background-size: cover;
+    background: #0A4B7D;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 3.125em;
+}
+
+footer #footer-header .col-md-4 {
+    margin: 3.125em 0;
+}
+
+footer h2,
+footer .well-title h3 {
+    font-size: 1.5625em;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+footer h3 {
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 auto 0.9375em;
+}
+
+/* Appointment Request */
+footer #contact-form {
+    margin-bottom: 1.875em;
+}
+
+footer .well-title {
+    margin: 1.875em auto 1.25em;
+}
+
+footer .btn-alt {
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    display: block;
+    margin: 0.625em auto;
+}
+
+/* Footer Instagram */
+footer .social-ig {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+footer .fa-instagram {
+    font-size: 2.5em;
+    color: #fff;
+}
+
+/* Office Hours */
+footer .hours {
+    color: #fff;
+}
+
+footer .hours label {
+    display: inline-block;
+    width: 110px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.9375em;
+    font-weight: 300;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 0.625em;
+}
+
+#author {
+    font-size: 0.75em;
+    margin-top: -0.5em;
+}
+
+#author a {
+    color: #fff;
+}
+
+/* Main Page */
+main section h2 {
+    color: #0A4B7D;
+    margin-top: 1.875em;
+}
+
+main section h3.well {
+    background-color: #0A4B7D;
+    color: #fff;
+    margin-top: 1.875em;
+}
+
+.carousel-inner img {
+    width: 100%;
+    margin: auto;
+    min-height:200px;
+}
+
+
+/* Contact Page */
+#map {
+    padding: 80px 0;
+    display: block;
+}
+
+#map iframe {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gmap iframe {
+    pointer-events: none;
+}
+
+.gmap.active iframe {
+    pointer-events: all;
+}
+
+
+
+
+
+@media (min-width: 860px) {
+    body.scrolled {
+        padding-top: 168px;
+    }
+
+    body.page_index.scrolled header, body.scrolled header {
+        position: fixed;
+        background-color: #fff;
+    }
+
+    body.scrolled #main-header > div > a {
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 1000px) {
+    footer {
+        margin-bottom: 32px !important;
+    }
+}
+
+@media screen and (min-width: 1021px) {
+    #main-content {
+        padding: 250px 0 3.125em;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    header, body.page_index header {
+        background-color: #fff;
+    }
+
+    #main-content {
+        padding: 150px 0 0.625em;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+    body {
+        padding-top: 0;
+    }
+
+    body.scrolled header {
+        position: static !important;
+    }
+
+    header #responsive-nav {
+        display: block;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav > ul {
+        display: none;
+        text-align: center;
+        margin: 0;
+    }
+
+    nav li {
+        margin: 0 1%;
+    }
+
+    nav.opened > ul > li {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav.opened > ul > li ul {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #main-header > div {
+        flex-direction: column;
+    }
+
+    #main-header .header-contact {
+        flex-basis: auto;
+    }
+
+    #main-header > div > a {
+        order: -1;
+    }
+
+    main {
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 770px) {
+    body.page_index main section h2{
+        font-size: 1.875em;
+        line-height: 1.2;
+    }
+
+    h2:after {
+        display: block;
+        margin: 0.625em auto;
+    }
+}
