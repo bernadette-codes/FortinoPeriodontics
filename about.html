@@ -1,25 +1,19 @@
 <!DOCTYPE html>
-
-<!--[if IE 7]>
-<html class="ie ie7">
-<![endif]-->
-
-<!--[if IE 8]>
-<html class="ie ie8">
-<![endif]-->
-
-<!--[if !(IE 7) & !(IE 8)]><!-->
-<html>
-<!--<![endif]-->
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-    <title>About Dr. Daniel Fortino | Fortino Periodontics and Implant Surgical Center</title>
-    <meta name="description" content="Fortino Periodontics and Implant Surgical Center">
+    <title>About Dr. Daniel Fortino - Periodontist in Ancaster, ON</title>
+    <meta name="description" content="Dr. Daniel Fortino - Periodontist in Ancaster, ON. Call 905-730-5818 to book an appointment today!">
     <meta name="keywords" content="Ancaster Periodontics, Ancaster Periodontist, Fortino Periodontics, Fortino Periodontist, Dr. Daniel Fortino">
-    <meta name="author" content="Bernadette Estacio Engleman">
+    <meta name="geo.region" content="CA-ON" />
+    <meta name="geo.placename" content="Hamilton" />
+    <meta name="geo.position" content="43.228181;-79.975877" />
+    <meta name="ICBM" content="43.228181, -79.975877" />
+    <meta name="apple-mobile-web-app-title" content="Periodontist in Ancaster, ON | Dr. Daniel Fortino" />
+    <meta name="author" content="Bernadette Estacio">
     <link rel="shortcut icon" href="img/tabIcon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,900|Crete+Round:400,400i">
@@ -28,7 +22,6 @@
     <link rel="stylesheet" href="css/_ui.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
-    <meta name="apple-mobile-web-app-title" content="Fortino Periodontics and Implant Surgical Center | Dr. Daniel Fortino" />
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
@@ -36,17 +29,32 @@
 
 <body class="page_index">
 
-    <h1>Fortino Periodontist</h1>
+    <h1 class="seo">Fortino Periodontist</h1>
     <h2 class="seo">Daniel Fortino</h2>
 
     <header class="slideDown">
         <nav id="main-nav">
             <div id="responsive-nav">
-                <a href="#" class="menu"><i class="icon-menu"></i>Menu</a>
+                <div class="flex">
+                    <a href="#" class="menu" title="Menu">
+                        <button>
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        </button>
+                    </a>
+                    <a href="tel:19057305818" title="Link to call Dr. Fortino">
+                        <span class="glyphicon glyphicon-phone-alt"></span>
+                    </a>
+                    <a href="mailto:drfortinoperio@gmail.com" title="Link to write email to Dr. Fortino" class="email">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </a>
+                    <address><a href="http://bit.ly/2O2joKK" title="Link to google map" target="_blank">
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                    </a></address>
+                </div>
             </div>
 
             <ul>
-                <li><a href="index.html" title="Fortino Periodontics and Implant Surgical Center">Home</a></li>
+                <li><a href="index.html" title="Home">Home</a></li>
                 <li><a href="about.html" title="About">About</a></li>
                 <li><a href="procedures.html" title="Procedures">Procedures</a></li>
                 <li><a href="patients.html" title="Patients">Patients</a></li>
@@ -59,15 +67,15 @@
         <div id="main-header">
             <div>
                 <div class="header-contact">
-                    <a href="#contact-form" class="btn"><strong>Dr. Daniel Fortino</strong> BHSc, DDS, MS(perio), FRCD(c), dipABP</a>
+                    <a href="#appointment-form" title="Link to appointment form" class="btn"><strong>Dr. Daniel Fortino</strong> BHSc, DDS, MS(perio), FRCD(c), dipABP</a>
                 </div>
-                <a href="index.html">
+                <a href="index.html" title="Link to home page">
                     <img class="header-full" src="img/fortinoLogo2.jpg" alt="Fortino Periodontics and Implant Surgical Center">
                 </a>
-                <div class="header-contact">
-                    <a href="tel:19057305818">905-730-5818</a>
-                    <a href="mailto:drfortinoperio@gmail.com" class="email">drfortinoperio@gmail.com</a>
-                    <address><a href="http://bit.ly/2O2joKK" target="_blank">385 Wilson Street, Unit 1, Ancaster, Ontario L9G 2C1</a></address>
+                <div class="header-contact" id="contact-details">
+                    <a href="tel:19057305818" title="Link to call Dr. Fortino">905-730-5818</a><br>
+                    <a href="mailto:drfortinoperio@gmail.com" title="Link to write email to Dr. Fortino" class="email">drfortinoperio@gmail.com</a>
+                    <address><a href="http://bit.ly/2O2joKK" title="Link to google map" target="_blank">385 Wilson Street, Unit 1, Ancaster, Ontario L9G 2C1</a></address>
                 </div>
             </div>
         </div>
@@ -76,15 +84,32 @@
     <main id="main-content">
         <div class="container" id="about-page">
             <div class="row">
+                <div class="col-xs-3 col-sm-push-9">
+                    <!-- Request an Appointment -->
+                    <div class="request-appnt">
+                        <a href="#appointment-form" title="Link to appointment form" >
+                            <img src="img/request-appt.png" alt="Request an Appointment" class="img-responsive" width="220">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-9 col-xs-pull-3">
+                    <h2>Dr. Daniel James Fortino, BHSc, DDS, MS(perio), FRCD(c), dipABP</h2>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row">
 
                 <!-- Profile Photo -->
-                <div class="col-sm-4">
-                    <img src="img/danielProfile.jpg" alt="Dr. Daniel Fortino" class="img-responsive myPhoto" width="220">
+                <div class="col-sm-4 profile-photo">
+                    <img src="img/danielProfile.jpg" alt="Dr. Daniel Fortino" class="img-responsive" width="220">
                 </div>
 
                 <!-- About Dr. Fortino -->
                 <div class="col-sm-8">
-                    <h2>Dr. Daniel James Fortino, BHSc, DDS, MS(perio), FRCD(c), dipABP</h2>
                     <p>Dr. Daniel Fortino is a dual Board Certified Periodontist in Canada and the United States.
                         He obtained his Specialty Degree in Periodontics and a Masters in Science from the Centre for Advanced Dental Education in St Louis, Missouri.
                         After his specialty, he pursued a fellowship in Advanced Surgical and Restorative Oral Implantology at the School of Dental Medicine at the State University of New York at Buffalo working in conjunction with the Prosthodontic department and Implant Center.
@@ -100,46 +125,51 @@
     </main>
 
     <footer>
-        <section class="container" id="contact-form">
+        <section class="container" id="appointment-form">
             <div class="well-block">
                 <div class="well-title">
                     <h3>Appointment Request</h3>
                 </div>
 
                 <!-- Form start -->
-                <form action="contact.php" method="post" name="contactForm" id="contactForm">
+                <form action="appointment.php" method="post" name="appointmentForm" id="appointmentForm">
                     <div class="row">
 
                         <!-- Name -->
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control input-md required" title="Your first name is required">
+                                <label for="firstName" class="sr-only">First Name</label>
+                                <input id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control input-md" title="Your first name is required" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="lastNname" name="lastNname" type="text" placeholder="Last Name" class="form-control input-md required" title="Your last name is required">
+                                <label for="lastName" class="sr-only">Last Name</label>
+                                <input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md" title="Your last name is required" required>
                             </div>
                         </div>
 
                         <!-- Phone -->
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="phone" name="phone" type="tel" placeholder="Phone number" class="form-control input-md required">
+                                <label for="phone" class="sr-only">Phone number</label>
+                                <input id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone number" class="form-control input-md" required>
                             </div>
                         </div>
 
                         <!-- Email -->
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="email" name="email" type="text" placeholder="E-Mail" class="form-control input-md required">
+                                <label for="email" class="sr-only">Email address</label>
+                                <input id="email" name="email" type="email" placeholder="E-Mail" class="form-control input-md" required>
                             </div>
                         </div>
 
                         <!-- Preferred Day -->
                         <div class="col-md-6">
                             <div class="form-group">
-                                <select id="day" name="day" class="form-control required">
+                                <label for="day" class="sr-only">Preferred Day</label>
+                                <select id="day" name="day" class="form-control" required>
                                     <option value="" disabled selected>Preferred Day</option>
                                     <option value="Thursday">Thursday</option>
                                     <option value="Friday">Friday</option>
@@ -151,14 +181,16 @@
                         <!-- Preferred Time -->
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input id="preferred-time" name="preferred-time" type="text" placeholder="Preferred Time" class="form-control input-md required" title="Your preferred time is required">
+                                <label for="preferred-time" class="sr-only">Preferred Time</label>
+                                <input id="preferred-time" name="preferred-time" type="text" placeholder="Preferred Time" class="form-control input-md" title="Your preferred time is required" required>
                             </div>
                         </div>
 
                         <!-- Message -->
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea id="message" name="message" placeholder="Message" rows="5" class="form-control required" title="Your message is required"></textarea>
+                                <label for="message" class="sr-only">Message</label>
+                                <textarea id="message" name="message" placeholder="Message" rows="5" class="form-control" title="Your message is required" required></textarea>
                             </div>
                         </div>
 
@@ -177,7 +209,7 @@
         <div class="container">
             <div class="row" id="footer-header">
                 <div class="col-md-4">
-                    <a href="index.html">
+                    <a href="index.html" title="Link to home page">
                         <img src="img/fortinoLogo.jpg" alt="Fortino Periodontics and Implant Surgical Center">
                     </a>
                 </div>
@@ -186,7 +218,7 @@
                     <h2>Dr. Daniel Fortino</h2>
                     <p>BHSc, DDS, MS(perio), FRCD(c), dipABP</p>
                     <p class="social-ig">Find me on
-                        <a href="https://www.instagram.com/dr.daniel.fortino/?hl=en" target="_blank">
+                        <a href="https://www.instagram.com/dr.daniel.fortino/?hl=en" title="Link to instagram" target="_blank">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </p>
@@ -206,8 +238,8 @@
 
             <div class="row">
                 <div class="col-xs-12 copyright">
-                    <p>Copyright © <span id="year"> </span> Dr. Daniel Fortino <em>•</em> All rights reserved.</p>
-                    <p id="author">Designed and created by <a href="http://bernadetteengleman.com/" target="_blank">Bernadette Estacio Engleman</a></span></p>
+                    <p>Copyright © <span id="year"> </span> Dr. Daniel Fortino. All rights reserved.</p>
+                    <p id="author">Designed and created by <a href="http://bernadetteengleman.com/" title="Link to website developer" target="_blank">Bernadette Estacio</a></span></p>
                 </div>
             </div>
         </div>
