@@ -480,7 +480,7 @@ footer .hours label {
     margin: 3.125em auto;
 }
 
-#main-content section,
+main.main-page section,
 #about-page,
 #procedure-page,
 #patient-page,
@@ -493,12 +493,12 @@ footer #footer-header {
     padding-right: 1.875em;
 }
 
-#main-content section.gray-color {
+main.main-page section.gray-color {
     padding-left: 0;
     padding-right: 0;
 }
 
-#main-content section.gray-color .container {
+main.main-page section.gray-color .container {
     padding-left: 1.875em;
     padding-right: 1.875em;
 }
@@ -533,40 +533,41 @@ footer #footer-header {
 
 
 /* Main Page */
-main#main-content section {
+main.main-page section {
     padding-top: 5em;
     padding-bottom: 5em;
 }
 
-main#main-content section.gray-color {
+main.main-page section.gray-color {
     width: 100%;
     background-color: #ededed;
 }
 
-main#main-content section.flex-center {
-    width: 70%;
-    text-align: center;
+main.main-page section:last-of-type {
+    padding-bottom: 0;
 }
 
-main#main-content section.badge-logo {
+main.main-page section.badge-logo {
     padding-top: 3.125em;
     padding-bottom: 3.125em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-main#main-content section h2 {
+main.main-page section h2 {
     font-size: 2.5em;
     color: #0A4B7D;
     padding-bottom: 0.625em;
 }
 
-main#main-content section p {
+main.main-page section p {
     font-size: 1.25em;
     font-weight: 400;
     line-height: 1.875em;
     margin-bottom: 1.25em;
 }
 
-main#main-content button {
+main.main-page button {
     background-color: #0A4B7D;
     border-radius: 1.875em;
     border: none;
@@ -574,56 +575,61 @@ main#main-content button {
     margin-top: 0.9375em;
 }
 
-main#main-content button a {
+main.main-page button a {
     font-size: 1.125em;
     color: #fff;
     padding: 0.9375em 2.188em;
 }
 
-main#main-content button a:hover,
-main#main-content button a:visited,
-main#main-content button a:active {
+main.main-page button a:hover,
+main.main-page button a:visited,
+main.main-page button a:active {
     text-decoration: none;
 }
 
-main#main-content button:hover,
-main#main-content button:visited,
-main#main-content button:active {
+main.main-page button:hover,
+main.main-page button:visited,
+main.main-page button:active {
     text-decoration: none;
     background-color: #073457;
 }
 
-main#main-content .hidden-sm img {
+main.main-page .hidden-sm img {
     padding-top: 2.5em;
 }
 
-main#main-content .badge-logo img {
-    height: 6.25em;
-    margin-left: 0.75em;
-    margin-right: 0.75em;
+main.main-page .badge-logo img {
+    display: block;
+    height: 5em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-main#main-content .full-arch img {
+main.main-page .full-arch img {
     width: 80%;
     padding-top: 1.875em;
     padding-bottom: 1.875em;
 }
 
-main#main-content section.promote-procedure {
-    width: 85%;
+@media (max-width: 1299px) and (min-width: 1100px) {
+    main.main-page section.promote-procedure > div {
+        width: 18%;
+    }
 }
 
-main#main-content section.promote-procedure > div {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+main.main-page section.promote-procedure > div {
+    display: inline-block;
+    margin: 0 0.5em 1.875em;
 }
 
-main#main-content section.promote-procedure img {
+main.main-page section.promote-procedure img {
     width: 14.063em;
     height: 14.063em;
 }
 
-main#main-content section.promote-procedure h3 {
+main.main-page section.promote-procedure h3 {
     color: #0A4B7D;
     font-size: 1.5em;
     font-weight: 600;
@@ -631,9 +637,6 @@ main#main-content section.promote-procedure h3 {
     margin-top: 0.625em;
 }
 
-main#main-content .panel-body {
-    width: 100%;
-}
 
 .carousel-inner img {
     width: 100%;
@@ -1005,10 +1008,18 @@ form#referral-form #submit_button {
     main#main-content {
         padding-top: 12.5em;
     }
-
 }
 
 @media screen and (max-width: 992px) {
+    main.main-page .badge-logo div:nth-child(1),
+    main.main-page .badge-logo div:nth-child(2) {
+        padding-bottom: 2.188em;
+    }
+
+    main.main-page .badge-logo img {
+        height: 4.688em;
+    }
+
     #about-page p {
         margin-left: 1.5625em;
         margin-right: 1.5625em;
@@ -1084,7 +1095,7 @@ form#referral-form #submit_button {
         flex-basis: auto;
     }
 
-    #main-header > div > a img {
+    #main-header > div > a img.header-full {
         width: 12.5em;
         padding-top: 3.750em;
         padding-bottom: 0.625em;
@@ -1107,15 +1118,19 @@ form#referral-form #submit_button {
     }
 }
 
-@media screen and (max-width: 770px) {
-    body.page_index main section h2{
-        font-size: 1.875em;
-        line-height: 1.2;
-    }
+@media screen and (max-width: 768px) {
+    /*body.page_index main section h2{*/
+        /*font-size: 1.875em;*/
+        /*line-height: 1.2;*/
+    /*}*/
 
-    h2:after {
-        display: block;
-        margin: 0.625em auto;
+    /*h2:after {*/
+        /*display: block;*/
+        /*margin: 0.625em auto;*/
+    /*}*/
+
+    main.main-page .badge-logo div:nth-child(3) {
+        padding-bottom: 2.188em;
     }
 
     #overlayContent img {
