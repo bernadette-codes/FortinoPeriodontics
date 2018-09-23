@@ -62,6 +62,10 @@ img {
     border: 0;
 }
 
+.clear_float {
+    clear: both;
+}
+
 button, input, optgroup, select, textarea {
     color: inherit;
     font: inherit;
@@ -161,7 +165,7 @@ fieldset {
     padding: 0.35em 0.625em 0.75em;
 }
 
-h1, h2.seo {
+.seo {
     position: absolute;
     top: -9999px;
     left: -9999px;
@@ -187,14 +191,21 @@ body.page_index header {
     background-color: transparent;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
 header {
     width: 100%;
     top: 0;
-    z-index: 9999;
+    z-index: 99;
     background-color: #ffffff;
     text-align: center;
     -webkit-transition: margin .3s;
     transition: margin 0.3s;
+    border-bottom: 1px solid #0A4B7D;
+    box-shadow: 0 1px 2px #0A4B7D;
 }
 
 /* Menu */
@@ -213,16 +224,38 @@ nav {
 /* Small Device Menu */
 nav #responsive-nav {
     display: none;
+    height: 2.813em;
     width: 100%;
-    float: none;
 }
 
-nav #responsive-nav a {
+nav #responsive-nav .flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav #responsive-nav a,
+nav #responsive-nav address {
     position: relative;
-    color: #ffffff;
+    float: left;
+    text-align: center;
+}
+
+nav #responsive-nav button {
+    background-color: #0A4B7D;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+
+nav #responsive-nav span {
+    color: #fff;
+    font-size: 1.875em;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 2;
+    padding: 3px;
+}
+
+nav #responsive-nav address span {
+    font-size: 1.5625em;
+    padding-top: 6px;
 }
 
 nav ul {
@@ -239,6 +272,12 @@ nav ul li {
     position: relative;
 }
 
+nav ul li:hover a {
+    color: #fff;
+    background: #073457;
+    text-decoration: none;
+}
+
 nav li:before {
     content: none;
 }
@@ -250,23 +289,6 @@ nav li a {
     padding: 0.375em 0.9375em;
     transition: background .3s, color .3s;
     text-transform: uppercase;
-}
-
-nav ul li:hover a {
-    color: #fff;
-    background: #073457;
-    text-decoration: none;
-}
-
-nav.opened > ul > li {
-    display: block;
-    text-align: left;
-    width: 100%;
-}
-
-nav.opened > ul > li > a {
-    width: 100%;
-    padding: 0.3125em 0;
 }
 
 #main-header {
@@ -324,7 +346,11 @@ nav.opened > ul > li > a {
 
 #main-header .header-contact > a:hover,
 #main-header .header-contact address a:hover {
-    color: #073457;
+    color: #0A4B7D;
+}
+
+#main-header .header-contact > a.btn:hover {
+    color: #fff;
 }
 
 #main-header .header-contact .btn {
@@ -350,11 +376,11 @@ nav.opened > ul > li > a {
 /* Website logo */
 #main-header > div > a {
     max-width: 440px;
-    z-index: 500;
+    z-index: 100;
     transition: max-width .3s;
 }
 
-#main-header > div > a img {
+#main-header > div > a img.header-full {
     width: 100%;
     transition: width .3s;
 }
@@ -411,7 +437,7 @@ footer .social-ig {
 }
 
 footer .fa-instagram {
-    font-size: 2.5em;
+    font-size: 1.875em;
     color: #fff;
 }
 
@@ -422,7 +448,7 @@ footer .hours {
 
 footer .hours label {
     display: inline-block;
-    width: 110px;
+    width: 6.875em;
     text-align: left;
     font-weight: 600;
 }
@@ -445,16 +471,168 @@ footer .hours label {
     color: #fff;
 }
 
-/* Main Page */
-main section h2 {
-    color: #0A4B7D;
-    margin-top: 1.875em;
+#about-page,
+#procedure-page,
+#patient-page,
+#referral-page,
+#gallery-page,
+#contact-page {
+    margin: 3.125em auto;
 }
 
-main section h3.well {
+#main-content section,
+#about-page,
+#procedure-page,
+#patient-page,
+#referral-page,
+#gallery-page,
+#contact-page,
+footer #appointment-form,
+footer #footer-header {
+    padding-left: 1.875em;
+    padding-right: 1.875em;
+}
+
+#main-content section.gray-color {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#main-content section.gray-color .container {
+    padding-left: 1.875em;
+    padding-right: 1.875em;
+}
+
+#procedure-page h2,
+#patient-page h2,
+#referral-page h2,
+#gallery-page h2,
+#contact-page h2{
+    color: #0A4B7D;
+    font-size: 1.875em;
+    font-weight: 600;
+    margin-bottom: 1.875em;
+    clear: right;
+}
+
+#patient-page h3,
+#gallery-page h3 {
+    color: #476CA5;
+    margin: 1.875em auto 0.9375em;
+}
+
+/* Request an Appointment Button */
+/*.request-appnt {*/
+    /*width: 100%;*/
+/*}*/
+
+.request-appnt img {
+    float: right;
+    margin-bottom: -1.5625em;
+}
+
+
+/* Main Page */
+main#main-content section {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+main#main-content section.gray-color {
+    width: 100%;
+    background-color: #ededed;
+}
+
+main#main-content section.flex-center {
+    width: 70%;
+    text-align: center;
+}
+
+main#main-content section.badge-logo {
+    padding-top: 3.125em;
+    padding-bottom: 3.125em;
+}
+
+main#main-content section h2 {
+    font-size: 2.5em;
+    color: #0A4B7D;
+    padding-bottom: 0.625em;
+}
+
+main#main-content section p {
+    font-size: 1.25em;
+    font-weight: 400;
+    line-height: 1.875em;
+    margin-bottom: 1.25em;
+}
+
+main#main-content button {
     background-color: #0A4B7D;
+    border-radius: 1.875em;
+    border: none;
+    padding-bottom: 0.125em;
+    margin-top: 0.9375em;
+}
+
+main#main-content button a {
+    font-size: 1.125em;
     color: #fff;
-    margin-top: 1.875em;
+    padding: 0.9375em 2.188em;
+}
+
+main#main-content button a:hover,
+main#main-content button a:visited,
+main#main-content button a:active {
+    text-decoration: none;
+}
+
+main#main-content button:hover,
+main#main-content button:visited,
+main#main-content button:active {
+    text-decoration: none;
+    background-color: #073457;
+}
+
+main#main-content .hidden-sm img {
+    padding-top: 2.5em;
+}
+
+main#main-content .badge-logo img {
+    height: 6.25em;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+}
+
+main#main-content .full-arch img {
+    width: 80%;
+    padding-top: 1.875em;
+    padding-bottom: 1.875em;
+}
+
+main#main-content section.promote-procedure {
+    width: 85%;
+}
+
+main#main-content section.promote-procedure > div {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+main#main-content section.promote-procedure img {
+    width: 14.063em;
+    height: 14.063em;
+}
+
+main#main-content section.promote-procedure h3 {
+    color: #0A4B7D;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.875em;
+    margin-top: 0.625em;
+}
+
+main#main-content .panel-body {
+    width: 100%;
 }
 
 .carousel-inner img {
@@ -463,32 +641,342 @@ main section h3.well {
     min-height:200px;
 }
 
+/* About Page */
+#about-page h2 {
+    color: #0A4B7D;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 3.125em;
+}
+
+#about-page .profile-photo img {
+    margin-top: 1.875em;
+    margin-bottom: 1.5625em;
+    border-radius: 5%;
+    box-shadow: 0 0 8px 2px #e5e5e5;
+}
+
+#about-page p {
+    font-size: 1.125em;
+    font-weight: 400;
+    line-height: 1.5625em;
+    color: #303030;
+    margin-bottom: 1.875em;
+}
+
+/* Procedure Page */
+#procedure-page h3,
+#procedure-page h3.accordion {
+    width: 100%;
+    font-size: 1.5em;
+    background-color: #1074BC;
+    color: #fff;
+    border: 1px solid #0A4B7D;
+    padding: 1.125em;
+    text-align: left;
+    outline: none;
+}
+
+#procedure-page h3.accordion {
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#procedure-page .active,
+#procedure-page .accordion:hover {
+    background-color: #0A4B7D;
+}
+
+#procedure-page .accordion.more:after {
+    content: '\002B';
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    margin-left: 0.625em;
+}
+
+#procedure-page .panel {
+    display: none;
+    padding: 1.125em;
+    background-color: white;
+    overflow: hidden;
+    margin-bottom: 1.25em;
+}
+
+#procedure-page .panel p {
+    font-size: 1.125em;
+}
+
+#procedure-page .flex-center div {
+    text-align: center;
+    margin: 1.25em 0;
+}
+
+/* Download Forms */
+#patient-page a,
+#referral-page a {
+    cursor: pointer;
+}
+
+#patient-page a:hover,
+#patient-page a:visited,
+#patient-page a:active,
+#referral-page a:hover,
+#referral-page a:visited,
+#referral-page a:active {
+    text-decoration: none;
+}
+
+#patient-page a:hover,
+#referral-page a:hover {
+    color: #476CA5;
+    font-weight: 600;
+}
+
+/* Referral Page */
+#referral-page section {
+    font-size: 1.25em;
+    margin-bottom: 1.875em;
+    border-bottom: 1px solid lightgray;
+}
+
+.referral-form-container {
+    max-width: 600px;
+}
+
+form#referral-form label {
+    display: block;
+    color: #01559f;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 0.875em;
+    padding: 0.5em 0 0.125em 0;
+
+}
+
+form#referral-form input,
+form#referral-form textarea {
+    display: block;
+    width: 100%;
+    background-color: #e6ecf4;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 0 2px 3px 0 #D6D6D6;
+    color: #01559f;
+    font-size: 1.125em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 0.625em 3%;
+    outline: none;
+}
+
+form#referral-form .options_container {
+    width: 100%;
+    margin: 0.3125em 0 1.25em 0;
+}
+
+form#referral-form .options_container .option_field {
+    float: left;
+    padding: 0 1% 0 0;
+}
+
+form#referral-form .options_container .option_field input {
+    float: left;
+    margin: 1px 0.3125em 0 0;
+    color: #565656;
+    box-shadow: none;
+}
+
+form#referral-form .options_container .option_field label {
+    float: left;
+    display: block;
+    padding: 0 0 0.125em 0;
+    font-style: normal;
+    font-size: 0.875em;
+    font-weight: normal;
+    line-height: 0.875em;
+}
+
+form#referral-form select {
+    padding: 0.3125em;
+    border-color: #01559f;
+}
+
+form#referral-form input[type="file"] {
+    background: none;
+    box-shadow: none;
+    display: none;
+}
+
+form#referral-form .custom-file-upload {
+    display: inline-block;
+    background: #e6ecf4;
+    color: #01559f;
+    border-radius: 0.125em;
+    padding: 0.625em;
+    margin-right: 0.5em;
+    cursor: pointer;
+}
+
+form#referral-form #submit_button {
+    display: block;
+    float: left;
+    background: #01559f;
+    padding: 0.625em 5%;
+    border: 0;
+    border-radius: 0.625em;
+    color: #ffffff;
+    font-style: normal;
+    font-size: 0.875em;
+    font-weight: normal;
+    line-height: 0.875em;
+}
+
+    /* Gallery Page */
+#gallery-page section {
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+}
+
+#gallery-page section:last-of-type {
+    border-bottom: none;
+}
+
+#gallery-page h3 {
+    color: #476CA5;
+    font-weight: 800;
+}
+
+#gallery-page section img {
+    border: 2px solid #0A4B7D;
+    cursor: pointer;
+}
+
+#gallery-page section img:hover  {
+    border: 4px solid #0A4B7D;
+}
+
+#gallery-page label {
+    color: #476CA5;
+    font-size: 1.125em;
+    margin-top: 0.625em;
+}
+
+/* Image Zoom */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 200;
+}
+
+#overlayContent {
+    position: fixed;
+    width: 100%;
+    top: 30%;
+    left: 0;
+    text-align: center;
+    display: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+#overlayContent img {
+    width: 37.5em;
+}
+
+#imgBig {
+    border: 5px solid #01216C;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 /* Contact Page */
-#map {
-    padding: 80px 0;
-    display: block;
+#contact-page .profile-photo img {
+    border: 2px solid #0A4B7D;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 1px #476CA5;
 }
 
-#map iframe {
-    max-width: 1200px;
+/* Instagram */
+#contact-page .social-ig {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    color: #0A4B7D;
+    letter-spacing: 1px;
+    margin: 1.25em auto;
+    text-align: center;
+}
+
+#contact-page .fa-instagram {
+    font-size: 1.875em;
+}
+
+#contact-page form {
+    box-shadow: 0 0 2px 1px #476CA5;
+}
+
+#contact-page .form-control {
+    font-size: 1em;
+    border: 1px solid #0A4B7D;
+    border-radius: 0;
+    line-height: 2.5em;
+    padding: 0.9375em;
+}
+
+#contact-page textarea {
+    margin-bottom: 0.9375em;
+}
+#contact-page section {
+    margin-bottom: 1.25em;
+}
+
+#contact-page h3 {
+    font-size: 1.5em;
+    color: #0A4B7D;
+    margin-bottom: 0.5em;
+}
+
+#patient-page label,
+#contact-page label {
+    display: inline-block;
+    width: 5em;
+    text-align: left;
+    font-weight: 600;
+}
+
+#contact-page section.contact-info p {
+    line-height: 1.25em;
+}
+
+#contact-page section a {
+    font-size: 1.25em;
+}
+
+#contact-page section a:visited,
+#contact-page section a:active {
+    text-decoration: none !important;
+}
+
+#contact-page iframe {
     width: 100%;
-    margin: 0 auto;
+    padding-top: 1.25em;
 }
 
-.gmap iframe {
-    pointer-events: none;
+@media screen and (min-width: 1200px) {
+    main#main-content {
+        padding: 15.625em 0 3.125em;
+    }
 }
 
-.gmap.active iframe {
-    pointer-events: all;
-}
-
-
-
-
-
-@media (min-width: 860px) {
+@media screen and (min-width: 860px) {
     body.scrolled {
         padding-top: 168px;
     }
@@ -503,15 +991,9 @@ main section h3.well {
     }
 }
 
-@media (max-width: 1000px) {
-    footer {
-        margin-bottom: 32px !important;
-    }
-}
-
-@media screen and (min-width: 1021px) {
-    #main-content {
-        padding: 250px 0 3.125em;
+@media screen and (max-width: 1200px) {
+    main#main-content {
+        padding-top: 14.063em;
     }
 }
 
@@ -520,10 +1002,31 @@ main section h3.well {
         background-color: #fff;
     }
 
-    #main-content {
-        padding: 150px 0 0.625em;
+    main#main-content {
+        padding-top: 12.5em;
     }
 
+}
+
+@media screen and (max-width: 992px) {
+    #about-page p {
+        margin-left: 1.5625em;
+        margin-right: 1.5625em;
+    }
+
+    #contact-page section:first-of-type {
+        margin-top: 6.25em;
+        padding-top: 1.875em;
+        border-top: 1px solid lightgray;
+    }
+
+    #contact-page section {
+        padding-left: 1.5625em;
+    }
+
+    #footer-header img {
+        max-width: 18.75em;
+    }
 }
 
 @media screen and (max-width: 860px) {
@@ -539,8 +1042,14 @@ main section h3.well {
         display: block;
     }
 
+    header #contact-details {
+        display: none;
+    }
+
     nav {
         width: 100%;
+        position: fixed;
+        z-index: 999;
     }
 
     nav > ul {
@@ -554,13 +1063,17 @@ main section h3.well {
     }
 
     nav.opened > ul > li {
+        display: block;
+        width: 100%;
         margin: 0;
         text-align: center;
     }
 
-    nav.opened > ul > li ul {
-        padding-left: 0;
-        text-align: center;
+    nav.opened > ul > li > a {
+        display: inline-block;
+        width: 35%;
+        padding: 0.5em;
+        margin: 0;
     }
 
     #main-header > div {
@@ -571,6 +1084,16 @@ main section h3.well {
         flex-basis: auto;
     }
 
+    #main-header > div > a img {
+        width: 12.5em;
+        padding-top: 3.750em;
+        padding-bottom: 0.625em;
+    }
+
+    #main-header .header-contact {
+        padding-bottom: 0.5em;
+    }
+
     #main-header > div > a {
         order: -1;
     }
@@ -579,6 +1102,9 @@ main section h3.well {
         margin: 0 auto;
     }
 
+    #overlayContent img {
+        width: 31.25em;
+    }
 }
 
 @media screen and (max-width: 770px) {
@@ -590,5 +1116,35 @@ main section h3.well {
     h2:after {
         display: block;
         margin: 0.625em auto;
+    }
+
+    #overlayContent img {
+        width: 25em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #procedure-page h3,
+    #procedure-page h3.accordion {
+        font-size: 1.25em;
+        margin-right:0.625em;
+    }
+
+    #gallery-page section img {
+        pointer-events: none;
+    }
+
+    #contact-page section:first-of-type {
+        margin-top: 6.25em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #footer-header img {
+        max-width: 12.5em;
+    }
+
+    footer .hours label {
+        width: 5em;
     }
 }
