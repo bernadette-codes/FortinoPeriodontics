@@ -3,9 +3,26 @@ var d = new Date(),
     n = d.getFullYear();
 document.getElementById("year").innerHTML = n;
 
+
+// Accordion for Procedures Page
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
 $(function(){
 
-//toggle nav
+    //toggle nav
     $("#responsive-nav").on("click",".menu",function(e){
         var nav = $("header nav");
         if(nav.hasClass("opened")){
@@ -18,14 +35,6 @@ $(function(){
             nav.toggleClass("opened").find(">ul").slideToggle();
         }
         return false;
-    });
-
-
-    //activate google map
-    $(".gmap").on("mouseenter",function(){
-        $(this).addClass("active");
-    }).on("mouseleave",function(){
-        $(this).removeClass("active");
     });
 
 
@@ -47,7 +56,49 @@ $(function(){
         }
     });
 
-    $(".more-to-explore").appendTo($("#explore-container"));
+    // //Landing Page Photos
+    // var windowHeight = $(window).height(),
+    //     windowWidth = $(window).width(),
+    //     $landing = $(".main-page .crossfade"),
+    //     $header = $("header.slideDown").height(),
+    //
+    //
+    // //Page on Resize
+    // $(window).on("resize", function() {
+    //     var windowHeight = $(window).height();
+    //
+    //     $landing.css({"height": windowHeight-$header, "width": windowWidth});
+    // });
+    //
+    // //Landing Page Size
+    // $landing.css("height",(windowHeight - $header));
+
+    var windowHeight = $(window).height(),
+        $header = $("header").height(),
+        $landing = $(".main-page .crossfade");
+
+    $landing.css("height",(windowHeight - $header));
+
+
+        //Zoom-in Photos
+    var $imgBig = $("#imgBig"),
+        $overlay = $("#overlay"),
+        $overlayContent = $("#overlayContent");
+
+    $("#gallery-page section img").click(function(){
+        $imgBig.attr("src",$(this).prop('src'));
+        $overlay.show(350);
+        $overlayContent.show(350);
+    });
+
+    // Hide Bigger Photos
+    $imgBig.click(function(){
+        $(this).attr("src", "");
+        $overlay.hide();
+        $overlayContent.hide();
+    });
+
+
 
     $(".hover-change").on("mouseover", function() {
         var $this = $(this);
@@ -59,55 +110,6 @@ $(function(){
         $this.attr("src", $this.data("original"));
     });
 
-    //faq
-    $("#faqs>h3").on("click", function(){
-        if($(this).hasClass("active")){
-            $(this).removeClass("active").next("div").slideUp().removeClass("active-div");
-
-        } else{
-            $("#faqs>h3").removeClass("active").next("div").slideUp();
-            $(this).addClass("active").next("div").slideDown().addClass("active-div");
-        }
-    });
-
-
-
-    /*
-
-      $("#callout-video-wrapper").on("click", ".play-video", function() {
-              $("#callout-video").html('<iframe width="100%" height="auto" src="https://www.youtube.com/embed/bQespIIUkDQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
-              return false;
-          });
-
-
-    var theWindow = $(window),
-        body = $("body");
-    if(theWindow.width() > 550){
-      $("#review-rotation").cycle({
-        slides: ">div",
-        fx: "carousel",
-        carouselVisible: "3",
-        carouselFluid: true,
-        pager: "#review-pager",
-        prev: ">.prev",
-        next: ">.next",
-        timeout: "10000",
-        pagerTemplate: "<span></span>"
-      })
-    } else{
-      $("#review-rotation").cycle({
-        slides: ">div",
-        pager: "#review-pager",
-        timeout: "10000",
-        pagerTemplate: "<span></span>"
-      })
-    }
-
-
-
-      */
-
-
     // cool form
     if(!String.prototype.trim){(function(){var rtrim=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;String.prototype.trim=function(){return this.replace(rtrim,'')}})()}[].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl){if(inputEl.value.trim()!==''){classie.add(inputEl.parentNode,'input--filled')}
         inputEl.addEventListener('focus',onInputFocus);inputEl.addEventListener('blur',onInputBlur)});function onInputFocus(ev){classie.add(ev.target.parentNode,'input--filled')}
@@ -117,19 +119,6 @@ $(function(){
     else{hasClass=function(elem,c){return classReg(c).test(elem.className)};addClass=function(elem,c){if(!hasClass(elem,c)){elem.className=elem.className+' '+c}};removeClass=function(elem,c){elem.className=elem.className.replace(classReg(c),' ')}}
     function toggleClass(elem,c){var fn=hasClass(elem,c)?removeClass:addClass;fn(elem,c)}
     var classie={hasClass:hasClass,addClass:addClass,removeClass:removeClass,toggleClass:toggleClass,has:hasClass,add:addClass,remove:removeClass,toggle:toggleClass};if(typeof define==='function'&&define.amd){define(classie)}else{window.classie=classie}
-
-
-
-    var slideshows = $('.cycle-slideshow').on('cycle-prev cycle-next', function(e, opts) {
-        // advance the other slideshow
-        slideshows.not(this).cycle('goto', opts.currSlide);
-    });
-
-    $('#carousel .cycle-slideshow figure').click(function () {
-        console.log("clicked");
-        var index = $('#carousel .cycle-slideshow').data('cycle.API').getSlideIndex(this);
-        slideshows.cycle('goto', index);
-    });
 
 
 
