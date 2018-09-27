@@ -504,16 +504,16 @@ main.main-page section.gray-color .container {
 }
 
 #procedure-page h2,
-#patient-page h2,
-#referral-page h2,
-#gallery-page h2,
-#contact-page h2{
-    color: #0A4B7D;
-    font-size: 1.875em;
-    font-weight: 600;
-    margin-bottom: 1.875em;
-    clear: right;
-}
+ #patient-page h2,
+ #referral-page h2,
+ #gallery-page h2,
+ #contact-page h2{
+     color: #0A4B7D;
+     font-size: 1.875em;
+     font-weight: 600;
+     margin-bottom: 1.875em;
+     clear: right;
+ }
 
 #patient-page h3,
 #gallery-page h3 {
@@ -521,10 +521,13 @@ main.main-page section.gray-color .container {
     margin: 1.875em auto 0.9375em;
 }
 
+#patient-page h3:first-of-type {
+    margin-top: 0;
+}
+
 /* Request an Appointment Button */
-/*.request-appnt {*/
-    /*width: 100%;*/
-/*}*/
+
+
 
 .request-appnt img {
     float: right;
@@ -848,6 +851,10 @@ form#referral-form #submit_button {
     border-bottom: none;
 }
 
+#gallery-page h2 {
+    margin-bottom: 0;
+}
+
 #gallery-page h3 {
     color: #476CA5;
     font-weight: 800;
@@ -1129,8 +1136,19 @@ form#referral-form #submit_button {
         /*margin: 0.625em auto;*/
     /*}*/
 
+    /* Request an Appointment Button */
+    .request-appnt img {
+        float: left;
+        padding-left: 1.25em;
+        padding-bottom: 1.875em;
+    }
+
     main.main-page .badge-logo div:nth-child(3) {
         padding-bottom: 2.188em;
+    }
+
+    #about-page h2 {
+        margin-bottom: 0.625em;
     }
 
     #overlayContent img {
@@ -1163,3 +1181,72 @@ form#referral-form #submit_button {
         width: 5em;
     }
 }
+
+.crossfade {
+    position: relative;
+    background-image: url("https://placehold.it/1200x400?text=IMAGE");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -10px;
+}
+
+.crossfade > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.crossfade h2 {
+    font-size: 3.125em;
+}
+
+@media screen and (max-width: 500px) {
+    .crossfade h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .crossfade h2 {
+        font-size: 1.875em;
+    }
+}
+
+.crossfade p {
+    font-size: 1.875em;
+    margin-top: -0.625em;
+    margin-bottom: 5px;
+    padding: 5px 0!important;
+    line-height:  1.25em;
+    border-bottom: 2px solid #fff;
+}
+
+@media screen and (max-width: 1100px) {
+    .crossfade p {
+        font-size: 1.25em;
+    }
+}
+
+.crossfade h3 {
+    font-size: 2.5em;
+}
+
+@media screen and (max-width: 900px) {
+    .crossfade h3 {
+        font-size: 1.875em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .crossfade h3 {
+        font-size:  1.25em;
+    }
+}
+
+/*https://www.cssscript.com/css-only-crossfading-background-slideshow/*/
