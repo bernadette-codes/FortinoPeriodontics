@@ -35,6 +35,10 @@ strong {
     font-weight: 700;
 }
 
+em {
+    font-style: italic;
+}
+
 a {
     background-color: transparent;
     color: #0A4B7D;
@@ -493,30 +497,58 @@ footer #footer-header {
     padding-right: 1.875em;
 }
 
-main.main-page section.gray-color {
+main.main-page button a:hover,
+main.main-page button a:visited,
+main.main-page button a:active,
+main.main-page .promote-procedure a:hover,
+main.main-page .promote-procedure a:visited,
+main.main-page .promote-procedure a:active,
+main.main-page .promote-procedure a:focus,
+#procedure-page h3 a:visited,
+#procedure-page h3 a:active,
+#procedure-page h3 a:focus,
+#procedure-page button a:hover,
+#procedure-page button a:visited,
+#procedure-page button a:active,
+#procedure-page button a:focus,
+#patient-page a:hover,
+#patient-page a:visited,
+#patient-page a:active,
+#patient-page a:focus,
+#referral-page a:hover,
+#referral-page a:visited,
+#referral-page a:active,
+#referral-page a:focus,
+#contact-page section a:visited,
+#contact-page section a:active,
+#contact-page section a:focus {
+    text-decoration: none;
+}
+
+main.main-page section.blue-color {
     padding-left: 0;
     padding-right: 0;
 }
 
-main.main-page section.gray-color .container {
+main.main-page section.blue-color .container {
     padding-left: 1.875em;
     padding-right: 1.875em;
 }
 
 #procedure-page h2,
- #patient-page h2,
- #referral-page h2,
- #gallery-page h2,
- #contact-page h2{
+#patient-page h2,
+#referral-page h2,
+#gallery-page h2,
+#contact-page h2{
      color: #0A4B7D;
      font-size: 1.875em;
      font-weight: 600;
+     line-height: 1.25em;
      margin-bottom: 1.875em;
      clear: right;
  }
 
-#patient-page h3,
-#gallery-page h3 {
+#patient-page h3 {
     color: #476CA5;
     margin: 1.875em auto 0.9375em;
 }
@@ -525,10 +557,12 @@ main.main-page section.gray-color .container {
     margin-top: 0;
 }
 
+#main-content p.intro {
+    font-size: 1.25em;
+    padding-bottom: 1.25em;
+}
+
 /* Request an Appointment Button */
-
-
-
 .request-appnt img {
     float: right;
     margin-bottom: -1.5625em;
@@ -541,9 +575,19 @@ main.main-page section {
     padding-bottom: 5em;
 }
 
-main.main-page section.gray-color {
+main.main-page section.blue-color {
     width: 100%;
-    background-color: #ededed;
+    background-color: #e4f5fd;
+}
+
+main.main-page section:first-of-type {
+    background: url("../img/drDanielFortino/Fortino4a.png") left bottom/auto no-repeat;
+}
+
+main.main-page section:first-of-type .container {
+    width: 90%;
+    padding-left: 8%;
+    padding-bottom: 3.125em;
 }
 
 main.main-page section:last-of-type {
@@ -558,7 +602,7 @@ main.main-page section.badge-logo {
 }
 
 main.main-page section h2 {
-    font-size: 2.5em;
+    font-size: 2.188em;
     color: #0A4B7D;
     padding-bottom: 0.625em;
 }
@@ -570,7 +614,8 @@ main.main-page section p {
     margin-bottom: 1.25em;
 }
 
-main.main-page button {
+main.main-page button,
+#procedure-page button {
     background-color: #0A4B7D;
     border-radius: 1.875em;
     border: none;
@@ -578,16 +623,11 @@ main.main-page button {
     margin-top: 0.9375em;
 }
 
-main.main-page button a {
+main.main-page button a,
+#procedure-page button a{
     font-size: 1.125em;
     color: #fff;
     padding: 0.9375em 2.188em;
-}
-
-main.main-page button a:hover,
-main.main-page button a:visited,
-main.main-page button a:active {
-    text-decoration: none;
 }
 
 main.main-page button:hover,
@@ -597,8 +637,15 @@ main.main-page button:active {
     background-color: #073457;
 }
 
-main.main-page .hidden-sm img {
-    padding-top: 2.5em;
+main.main-page section.doctor-intro {
+    background: #e4f5fd url("../img/drDanielFortino/Fortino2.png") 90% bottom/contain no-repeat;
+    height: 500px;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+main.main-page section.doctor-intro p {
+    width: 85%;
 }
 
 main.main-page .badge-logo img {
@@ -610,10 +657,41 @@ main.main-page .badge-logo img {
     margin-right: auto;
 }
 
-main.main-page .full-arch img {
-    width: 80%;
-    padding-top: 1.875em;
-    padding-bottom: 1.875em;
+main.main-page section.full-arch {
+    position: relative;
+    height: auto;
+    background: #e4f5fd url("../img/front-page/happy-couple.png") right bottom/contain no-repeat;
+}
+
+main.main-page section.full-arch h3 {
+    font-size: 1.5625em;
+    font-weight: 500;
+    color: #0A4B7D;
+    line-height: 1.25em;
+    margin-bottom: 1.5625em;
+}
+
+main.main-page section.full-arch .text-left h3 {
+    font-size: 1.875em;
+    line-height: 1.5625em;;
+}
+
+main.main-page section.full-arch .text-center h3 {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main.main-page section.full-arch p {
+    width: 73%;
+    font-size: 1.5625em;
+    line-height: 1.5625em;
+    margin-bottom: 1.25em;
+}
+
+main.main-page section.full-arch .row {
+    margin-top: 1.25em;
+    margin-bottom: 0;
 }
 
 @media (max-width: 1299px) and (min-width: 1100px) {
@@ -624,6 +702,7 @@ main.main-page .full-arch img {
 
 main.main-page section.promote-procedure > div {
     display: inline-block;
+    vertical-align: top;
     margin: 0 0.5em 1.875em;
 }
 
@@ -636,15 +715,72 @@ main.main-page section.promote-procedure h3 {
     color: #0A4B7D;
     font-size: 1.5em;
     font-weight: 600;
-    line-height: 1.875em;
+    line-height: 1.25em;
     margin-top: 0.625em;
 }
 
-
-.carousel-inner img {
+.hvrbox,
+.hvrbox * {
+    box-sizing: border-box;
+}
+.hvrbox {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+.hvrbox img {
+    max-width: 100%;
+}
+.hvrbox .hvrbox-layer_bottom {
+    display: block;
+}
+.hvrbox .hvrbox-layer_top {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    margin: auto;
-    min-height:200px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 0.9375em;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -ms-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+.hvrbox:hover .hvrbox-layer_top,
+.hvrbox.active .hvrbox-layer_top {
+    opacity: 1;
+}
+.hvrbox .hvrbox-text {
+    text-align: left;
+    font-size: 1em;
+    line-height: 1.25em;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.hvrbox .hvrbox-text_mobile {
+    font-size: 0.9375em;
+    border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
+    border-top: 1px solid rgba(179, 179, 179, 0.7);
+    margin-top: 5px;
+    padding-top: 2px;
+    display: none;
+}
+.hvrbox.active .hvrbox-text_mobile {
+    display: block;
 }
 
 /* About Page */
@@ -652,7 +788,13 @@ main.main-page section.promote-procedure h3 {
     color: #0A4B7D;
     font-size: 1.5em;
     font-weight: 600;
+    line-height: 1.25em;
     margin-bottom: 3.125em;
+}
+
+#about-page .profile-photo {
+    padding-left:  1.875em;
+    padding-right:  1.875em;
 }
 
 #about-page .profile-photo img {
@@ -671,7 +813,6 @@ main.main-page section.promote-procedure h3 {
 }
 
 /* Procedure Page */
-#procedure-page h3,
 #procedure-page h3.accordion {
     width: 100%;
     font-size: 1.5em;
@@ -714,24 +855,61 @@ main.main-page section.promote-procedure h3 {
     font-size: 1.125em;
 }
 
-#procedure-page .flex-center div {
-    text-align: center;
-    margin: 1.25em 0;
+#procedure-page p,
+#procedure-page li {
+    font-size: 1.25em;
+    font-weight: 400;
+    line-height: 1.875em;
+    margin-bottom: 1.25em;
+}
+
+#procedure-page ul {
+    margin-top: 1.875em;
+}
+
+#procedure-page ul li {
+    list-style-type: disc;
+
+}
+
+video {
+    display:block;
+    width: 100%;
+    height: 100%;
+}
+
+video#perio-video {
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Wisdom Teeth */
+#wisdom-teeth h3 {
+    color: #476CA5;
+    margin: 1.875em auto 0.9375em;
+}
+
+#wisdom-teeth h3:first-of-type {
+    margin-top: 0;
+}
+
+#procedure-page .well {
+    background-color: #e4f5fd;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#procedure-page .well img {
+    border: 2px solid #70b1e3;
 }
 
 /* Download Forms */
 #patient-page a,
 #referral-page a {
     cursor: pointer;
-}
-
-#patient-page a:hover,
-#patient-page a:visited,
-#patient-page a:active,
-#referral-page a:hover,
-#referral-page a:visited,
-#referral-page a:active {
-    text-decoration: none;
 }
 
 #patient-page a:hover,
@@ -851,17 +1029,15 @@ form#referral-form #submit_button {
     border-bottom: none;
 }
 
-#gallery-page h2 {
-    margin-bottom: 0;
-}
-
 #gallery-page h3 {
     color: #476CA5;
     font-weight: 800;
+    margin: 1.875em auto 0.625em;
 }
 
 #gallery-page section img {
     border: 2px solid #0A4B7D;
+    margin-bottom: 1.875em;
     cursor: pointer;
 }
 
@@ -869,10 +1045,13 @@ form#referral-form #submit_button {
     border: 4px solid #0A4B7D;
 }
 
+#gallery-page section img.no-zoom {
+    pointer-events: none;
+}
+
 #gallery-page label {
     color: #476CA5;
     font-size: 1.125em;
-    margin-top: 0.625em;
 }
 
 /* Image Zoom */
@@ -970,11 +1149,6 @@ form#referral-form #submit_button {
     font-size: 1.25em;
 }
 
-#contact-page section a:visited,
-#contact-page section a:active {
-    text-decoration: none !important;
-}
-
 #contact-page iframe {
     width: 100%;
     padding-top: 1.25em;
@@ -1001,9 +1175,72 @@ form#referral-form #submit_button {
     }
 }
 
+@media screen and (max-width: 1600px) {
+    main.main-page section.doctor-intro {
+        background-position: 95% bottom;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    main.main-page section.doctor-intro p {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    main.main-page section.doctor-intro p {
+        width: 75%;
+    }
+
+    main.main-page section.full-arch {
+        background-size: 35% 90%;
+    }
+
+    main.main-page section.full-arch .text-left h3 {
+        margin-bottom: 0.9375em;
+    }
+
+    main.main-page section.full-arch p {
+        width: 70%;
+        margin-bottom: 0.625em;
+    }
+
+    main.main-page section.full-arch .text-center h3 {
+        margin-top: 0.9375em;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    main.main-page section:first-of-type .container {
+        width: 90%;
+        padding-left: 10%;
+    }
+
+    main.main-page section.doctor-intro p {
+        width: 71%;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     main#main-content {
         padding-top: 14.063em;
+    }
+
+    main.main-page section:first-of-type .container {
+        width: 90%;
+        padding-left: 15%;
+    }
+
+    main.main-page section.doctor-intro p {
+        width: 67%;
+    }
+
+    main.main-page section.full-arch {
+        background-size: 40% 90%;
+    }
+
+    main.main-page section.promote-procedure {
+        padding-bottom: 3.125em;
     }
 }
 
@@ -1015,9 +1252,18 @@ form#referral-form #submit_button {
     main#main-content {
         padding-top: 12.5em;
     }
+
 }
 
 @media screen and (max-width: 992px) {
+    main.main-page section.doctor-intro {
+        height: auto;
+    }
+
+    main.main-page section.doctor-intro p {
+        width: 65%;
+    }
+
     main.main-page .badge-logo div:nth-child(1),
     main.main-page .badge-logo div:nth-child(2) {
         padding-bottom: 2.188em;
@@ -1027,9 +1273,22 @@ form#referral-form #submit_button {
         height: 4.688em;
     }
 
+    main.main-page section.full-arch {
+        background-size: 40% 85%;
+    }
+
     #about-page p {
         margin-left: 1.5625em;
         margin-right: 1.5625em;
+    }
+
+    video#perio-video {
+        width: 70%;
+        height: 70%;
+    }
+    /*Wisdom Teeth*/
+    #procedure-page .well h4 {
+        margin-top: 1.25em;
     }
 
     #contact-page section:first-of-type {
@@ -1044,6 +1303,21 @@ form#referral-form #submit_button {
 
     #footer-header img {
         max-width: 18.75em;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    main.main-page section:first-of-type .container {
+        width: 90%;
+        padding-left: 20%;
+    }
+
+    main.main-page section.doctor-intro {
+        background-position: right bottom;
+    }
+
+    main.main-page section.doctor-intro p {
+        width: 60%;
     }
 }
 
@@ -1120,23 +1394,24 @@ form#referral-form #submit_button {
         margin: 0 auto;
     }
 
+    main.main-page section.doctor-intro {
+        background-size: 40% 85%;
+    }
+
+    main.main-page section.doctor-intro p {
+        width: 65%;
+    }
+
+    main.main-page section.full-arch {
+        background-size: 40% 75%;
+    }
+
     #overlayContent img {
         width: 31.25em;
     }
 }
 
 @media screen and (max-width: 768px) {
-    /*body.page_index main section h2{*/
-        /*font-size: 1.875em;*/
-        /*line-height: 1.2;*/
-    /*}*/
-
-    /*h2:after {*/
-        /*display: block;*/
-        /*margin: 0.625em auto;*/
-    /*}*/
-
-    /* Request an Appointment Button */
     .request-appnt img {
         float: left;
         padding-left: 1.25em;
@@ -1147,8 +1422,31 @@ form#referral-form #submit_button {
         padding-bottom: 2.188em;
     }
 
+    main.main-page section.full-arch {
+        background-image: none;
+    }
+
+    main.main-page section.full-arch .text-left h3 {
+        text-align: center;
+    }
+
+    main.main-page section.full-arch p {
+        width: 90%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main.main-page section.full-arch .text-center h3 {
+        width: 85%;
+    }
+
     #about-page h2 {
         margin-bottom: 0.625em;
+    }
+
+    #about-page .profile-photo img {
+        width: 55%;
     }
 
     #overlayContent img {
@@ -1156,11 +1454,44 @@ form#referral-form #submit_button {
     }
 }
 
+@media screen and (max-width: 750px) {
+    main.main-page section:first-of-type,
+    main.main-page section.doctor-intro {
+        background-image: none;
+    }
+
+    main.main-page section:first-of-type .container {
+        width: 100%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    main.main-page section.doctor-intro .container {
+        padding-left: 8%;
+    }
+
+    main.main-page section.doctor-intro p {
+        width: 85%;
+    }
+}
+
 @media screen and (max-width: 500px) {
+    main.main-page section.doctor-intro .container {
+        padding-left: 10%;
+    }
+
+    #about-page .profile-photo img {
+        width: 70%;
+    }
+
     #procedure-page h3,
     #procedure-page h3.accordion {
         font-size: 1.25em;
         margin-right:0.625em;
+    }
+
+    #procedure-page .well p {
+        font-size: 1.125em;
     }
 
     #gallery-page section img {
@@ -1180,14 +1511,18 @@ form#referral-form #submit_button {
     footer .hours label {
         width: 5em;
     }
+
 }
+
+
+
+
+
+
 
 .crossfade {
     position: relative;
-    background-image: url("https://placehold.it/1200x400?text=IMAGE");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: #e4f5fd url("../img/main.jpg") top left/cover no-repeat;
     margin-top: -10px;
 }
 
@@ -1199,11 +1534,13 @@ form#referral-form #submit_button {
     transform: translate(-50%, -50%);
     margin: 0;
     color: #fff;
+    /*color: #073457;*/
     text-align: center;
 }
 
 .crossfade h2 {
     font-size: 3.125em;
+    text-shadow: 2px 2px 2px rgba(255,255,255,0.5);
 }
 
 @media screen and (max-width: 500px) {
@@ -1225,6 +1562,7 @@ form#referral-form #submit_button {
     padding: 5px 0!important;
     line-height:  1.25em;
     border-bottom: 2px solid #fff;
+    text-shadow: 2px 2px 2px rgba(255,255,255,0.5);
 }
 
 @media screen and (max-width: 1100px) {
@@ -1235,6 +1573,7 @@ form#referral-form #submit_button {
 
 .crossfade h3 {
     font-size: 2.5em;
+    text-shadow: 2px 2px 2px rgba(255,255,255,0.5);
 }
 
 @media screen and (max-width: 900px) {
@@ -1250,3 +1589,12 @@ form#referral-form #submit_button {
 }
 
 /*https://www.cssscript.com/css-only-crossfading-background-slideshow/*/
+
+img.sample {
+    float:right;
+    width: 20%;
+}
+
+.main-page section:first-of-type {
+    padding-bottom: 0;
+}
