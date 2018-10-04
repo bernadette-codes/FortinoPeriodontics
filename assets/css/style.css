@@ -582,6 +582,7 @@ main.main-page section.blue-color {
 
 main.main-page section:first-of-type {
     background: url("../img/drDanielFortino/Fortino4a.png") left bottom/auto no-repeat;
+    padding-bottom: 0;
 }
 
 main.main-page section:first-of-type .container {
@@ -1589,12 +1590,3 @@ form#referral-form #submit_button {
 }
 
 /*https://www.cssscript.com/css-only-crossfading-background-slideshow/*/
-
-img.sample {
-    float:right;
-    width: 20%;
-}
-
-.main-page section:first-of-type {
-    padding-bottom: 0;
-}
