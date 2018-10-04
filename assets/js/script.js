@@ -56,29 +56,19 @@ $(function(){
         }
     });
 
-    // //Landing Page Photos
-    // var windowHeight = $(window).height(),
-    //     windowWidth = $(window).width(),
-    //     $landing = $(".main-page .crossfade"),
-    //     $header = $("header.slideDown").height(),
-    //
-    //
-    // //Page on Resize
-    // $(window).on("resize", function() {
-    //     var windowHeight = $(window).height();
-    //
-    //     $landing.css({"height": windowHeight-$header, "width": windowWidth});
-    // });
-    //
-    // //Landing Page Size
-    // $landing.css("height",(windowHeight - $header));
-
+    //Landing Page Photos
     var windowHeight = $(window).height(),
         $header = $("header").height(),
         $landing = $(".main-page .crossfade");
 
     $landing.css("height",(windowHeight - $header));
 
+    // Page on Resize
+    $(window).on("resize", function() {
+        var windowHeight = $(window).height();
+
+        $landing.css({"height": windowHeight-$header, "width": windowWidth});
+    });
 
         //Zoom-in Photos
     var $imgBig = $("#imgBig"),
