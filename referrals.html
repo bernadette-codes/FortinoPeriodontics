@@ -52,7 +52,7 @@
                     </a></address>
                 </div>
             </div>
-
+    
             <ul>
                 <li><a href="index.html" title="Home">Home</a></li>
                 <li><a href="about.html" title="About">About</a></li>
@@ -63,7 +63,7 @@
                 <li><a href="contact.html" title="Contact">Contact</a> </li>
             </ul>
         </nav>
-
+    
         <div id="main-header">
             <div>
                 <div class="header-contact">
@@ -96,36 +96,36 @@
                     <h2>Patient Referrals</h2>
                 </div>
             </div>
-
+    
             <section>
                 <p>Please feel free to submit an online referral form or download the referral PDF file.</p>
-
+    
                 <P><a href="assets/forms/Referral-Pad.pdf" download="referral-Pad.pdf" title="download Referral form" target="_blank">
                     <span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;
                     Referral form
                 </a></P>
             </section>
-
+    
             <div class="referral-form-container">
                 <p>*PATIENT INFORMATION IS ENCRYPTED AND SECURE</p>
-
+    
                 <form id="referral-form" class="cr_form" action="referral-form.php" method="POST" enctype="multipart/form-data">
-
+    
                     <div class="form-group">
                         <label for="referring-office">Referring Office</label>
                         <input id="referring-office" name="referring-office" type="text" class="text_input" required/>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="referring-doctor">Referring Doctor</label>
                         <input id="referring-doctor" name="referring-doctor" type="text" class="text_input" required/>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="patient-name">Patient Name</label>
                         <input id="patient-name" name="patient-name" type="text" class="text_input" required/>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="title-patient">Title</label>
                         <select id="title-patient" name="title-patient" required>
@@ -138,32 +138,32 @@
                             <option value="Dr.">Dr.</option>
                         </select>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="patient-number">Patient Phone Number</label>
-                        <input id="patient-number" name="patient-number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+                        <input id="patient-number" name="patient-number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" required/>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="patient-address">Patient Address</label>
                         <input id="patient-address" name="patient-address" type="text" class="text_input" required>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="patient-insurance">Patient Insurance Company</label>
-                        <input id="patient-insurance" name="patient-insurance" type="text" class="text_input" required>
+                        <input id="patient-insurance" name="patient-insurance" type="text" class="text_input">
                     </div>
-
+    
                     <div class="form-group">
                         <label for="policy-number">Policy Number</label>
-                        <input id="policy-number" name="policy-number" type="text" class="text_input" required>
+                        <input id="policy-number" name="policy-number" type="text" class="text_input">
                     </div>
-
+    
                     <div class="form-group">
                         <label for="certificate-number">Certificate Number</label>
-                        <input id="certificate-number" name="certificate-number" type="text" class="text_input" required>
+                        <input id="certificate-number" name="certificate-number" type="text" class="text_input">
                     </div>
-
+    
                     <div class="form-group">
                         <label for="referral-case">Reason for Referral</label>
                         <select id="referral-case" name="referral-case" required>
@@ -183,7 +183,7 @@
                             <option value="Pathology">Pathology</option>
                         </select>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="diagnostic-films">Diagnostic Films</label>
                         <select id="diagnostic-films" name="diagnostic-films" required>
@@ -194,18 +194,19 @@
                             <option value="Will be mailed">Will be mailed</option>
                         </select>
                     </div>
-
+    
                     <div class="form-group">
-                        <label for="additional-files" class="custom-file-upload">Additional files</label>
+                        <label for="additional-files">Additional files</label>
+                        <label for="additional-files" class="custom-file-upload">Browse</label>
                         <input id="additional-files" name="additional-files" type="file" data-multiple-caption="{count} files selected" multiple>
                         <i style='font-size: 80%'>Max file upload size: <!-- max_upload: 10485760  max_post: 8388608  memory_limit: 134217728 -->8.00MB</i>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="additional-information">Additional Information</label>
-                        <textarea id="additional-information" name="additional-information" rows="3" required></textarea>
+                        <textarea id="additional-information" name="additional-information" rows="3"></textarea>
                     </div>
-
+    
                     <div class="form-group">
                         <label for="contact-patient">Contact Patient</label>
                         <select id="contact-patient" name="contact-patient" required>
@@ -215,31 +216,33 @@
                             <option value="Initial Appointment Already Booked">Initial Appointment Already Booked</option>
                         </select>
                     </div>
-
-                    <div class="g-recaptcha" data-sitekey="6LdIlnMUAAAAAC2z6eYKNXM4ltPPjoa0xOYBBXZN"></div>
-
+    
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LdIlnMUAAAAAC2z6eYKNXM4ltPPjoa0xOYBBXZN"></div>
+                    </div>
+    
                     <!-- Submit Button -->
                     <div class="form-group">
                         <button id="submit-referral" name="submit-referral" class="btn">Submit</button>
                     </div>
-
+    
                 </form>
             </div>
-
+    
         </div>
     </main>
-
+    
     <footer>
         <section class="container" id="appointment-form">
             <div class="well-block">
                 <div class="well-title">
                     <h3>Appointment Request</h3>
                 </div>
-
+    
                 <!-- Form start -->
                 <form action="appointment.php" method="post" name="appointmentForm" id="appointmentForm">
                     <div class="row">
-
+    
                         <!-- Name -->
                         <div class="col-md-6">
                             <div class="form-group">
@@ -253,15 +256,15 @@
                                 <input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md" title="Your last name is required" required>
                             </div>
                         </div>
-
+    
                         <!-- Phone -->
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="phone" class="sr-only">Phone number</label>
-                                <input id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone number" class="form-control input-md" required>
+                                <input id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone numbe (xxx-xxx-xxxx)" class="form-control input-md" required>
                             </div>
                         </div>
-
+    
                         <!-- Email -->
                         <div class="col-md-6">
                             <div class="form-group">
@@ -269,7 +272,7 @@
                                 <input id="email" name="email" type="email" placeholder="E-Mail" class="form-control input-md" required>
                             </div>
                         </div>
-
+    
                         <!-- Preferred Day -->
                         <div class="col-md-6">
                             <div class="form-group">
@@ -282,7 +285,7 @@
                                 </select>
                             </div>
                         </div>
-
+    
                         <!-- Preferred Time -->
                         <div class="col-md-6">
                             <div class="form-group">
@@ -290,7 +293,7 @@
                                 <input id="preferred-time" name="preferred-time" type="text" placeholder="Preferred Time" class="form-control input-md" title="Your preferred time is required" required>
                             </div>
                         </div>
-
+    
                         <!-- Message -->
                         <div class="col-md-12">
                             <div class="form-group">
@@ -298,21 +301,21 @@
                                 <textarea id="message" name="message" placeholder="Message" rows="5" class="form-control" title="Your message is required" required></textarea>
                             </div>
                         </div>
-
-                        <div class="g-recaptcha" data-sitekey="6LdIlnMUAAAAAC2z6eYKNXM4ltPPjoa0xOYBBXZN"></div>
-
+    
+                        <div class="col-md-12 form-group">
+                            <div class="g-recaptcha" data-sitekey="6LdIlnMUAAAAAC2z6eYKNXM4ltPPjoa0xOYBBXZN"></div>
+                        </div>
+    
                         <!-- Submit Button -->
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <button id="submit-button" name="submit-button" class="btn btn-alt">Submit</button>
-                            </div>
+                        <div class="col-md-12 form-group">
+                            <button id="submit-button" name="submit-button" class="btn btn-alt">Submit</button>
                         </div>
                     </div>
                 </form>
                 <!-- form end -->
             </div>
         </section>
-
+    
         <div class="container">
             <div class="row" id="footer-header">
                 <div class="col-md-4">
@@ -320,7 +323,7 @@
                         <img src="assets/img/fortinoLogo.jpg" alt="Fortino Periodontics and Implant Surgical Center">
                     </a>
                 </div>
-
+    
                 <div class="col-md-4">
                     <h2>Dr. Daniel Fortino</h2>
                     <p>BHSc, DDS, MS(perio), FRCD(c), dipABP</p>
@@ -330,7 +333,7 @@
                         </a>
                     </p>
                 </div>
-
+    
                 <div class="col-md-4">
                     <h3>Office Hours</h3>
                     <p class="hours">
@@ -344,11 +347,11 @@
                     </p>
                 </div>
             </div>
-
+    
             <div class="row">
                 <div class="col-xs-12 copyright">
                     <p>Copyright © <span id="year"> </span> Dr. Daniel Fortino. All rights reserved.</p>
-                    <p id="author">Designed and created by <a href="http://bernadetteengleman.com/" title="Link to website developer" target="_blank">Bernadette Estacio</a></span></p>
+                    <p id="author">Designed and created by <a href="http://bernadetteengleman.com/" title="Link to website developer" target="_blank">Bernadette Estacio</a></p>
                 </div>
             </div>
         </div>
@@ -359,6 +362,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="assets/js/script.js"></script>
+
+<script type="text/javascript" src="assets/js/jquery-key-restrictions.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#referring-office").lettersOnly();
+        $("#referring-doctor").lettersOnly();
+        $("#patient-name").lettersOnly();
+        $("#patient-number").numbersOnly();
+
+    });
+</script>
 
 </body>
 
