@@ -318,7 +318,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="phone" class="sr-only">Phone number</label>
-                                <input id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone number" class="form-control input-md" required>
+                                <input id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone number (xxx-xxx-xxxx)" class="form-control input-md" required>
                             </div>
                         </div>
 
@@ -336,6 +336,7 @@
                                 <label for="day" class="sr-only">Preferred Day</label>
                                 <select id="day" name="day" class="form-control" required>
                                     <option value="" disabled selected>Preferred Day</option>
+                                    <option value="Monday">Monday</option>
                                     <option value="Thursday">Thursday</option>
                                     <option value="Friday">Friday</option>
                                     <option value="Saturday">Saturday</option>
@@ -359,11 +360,13 @@
                             </div>
                         </div>
 
+                        <div class="col-md-12 form-group">
+                            <div class="g-recaptcha" data-sitekey="6LdIlnMUAAAAAC2z6eYKNXM4ltPPjoa0xOYBBXZN"></div>
+                        </div>
+
                         <!-- Submit Button -->
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <button id="submit-button" name="submit-button" class="btn btn-alt">Submit</button>
-                            </div>
+                        <div class="col-md-12 form-group">
+                            <button id="submit-button" name="submit-button" class="btn btn-alt">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -406,15 +409,16 @@
             <div class="row">
                 <div class="col-xs-12 copyright">
                     <p>Copyright © <span id="year"> </span> Dr. Daniel Fortino. All rights reserved.</p>
-                    <p id="author">Designed and created by <a href="http://bernadetteengleman.com/" title="Link to website developer" target="_blank">Bernadette Estacio</a></span></p>
+                    <p id="author">Designed and created by <a href="http://bernadetteengleman.com/" title="Link to website developer" target="_blank">Bernadette Estacio</a></p>
                 </div>
             </div>
         </div>
     </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="assets/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 
