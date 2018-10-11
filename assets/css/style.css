@@ -165,7 +165,7 @@ textarea {
 
 fieldset {
     border: 1px solid silver;
-    margin: 0 2px;
+    margin: 0 0.125em;
     padding: 0.35em 0.625em 0.75em;
 }
 
@@ -203,13 +203,16 @@ body.page_index header {
 header {
     width: 100%;
     top: 0;
-    z-index: 99;
     background-color: #ffffff;
     text-align: center;
     -webkit-transition: margin .3s;
     transition: margin 0.3s;
     border-bottom: 1px solid #0A4B7D;
     box-shadow: 0 1px 2px #0A4B7D;
+}
+
+header.slideDown {
+    z-index: 1000;
 }
 
 /* Menu */
@@ -254,12 +257,12 @@ nav #responsive-nav span {
     color: #fff;
     font-size: 1.875em;
     font-weight: 400;
-    padding: 3px;
+    padding: 0.188em;
 }
 
 nav #responsive-nav address span {
     font-size: 1.5625em;
-    padding-top: 6px;
+    padding-top: 0.375em;
 }
 
 nav ul {
@@ -425,6 +428,10 @@ footer .well-title {
     margin: 1.875em auto 1.25em;
 }
 
+footer .g-recaptcha {
+    display: inline-block;
+}
+
 footer .btn-alt {
     border: none;
     border-radius: 5px;
@@ -486,13 +493,18 @@ footer .hours label {
 
 main.main-page section,
 #about-page,
+footer #footer-header {
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+}
+
+#about-page h2,
 #procedure-page,
 #patient-page,
 #referral-page,
 #gallery-page,
 #contact-page,
-footer #appointment-form,
-footer #footer-header {
+footer #appointment-form {
     padding-left: 1.875em;
     padding-right: 1.875em;
 }
@@ -531,8 +543,8 @@ main.main-page section.blue-color {
 }
 
 main.main-page section.blue-color .container {
-    padding-left: 1.875em;
-    padding-right: 1.875em;
+    padding-left: 0.625em;
+    padding-right: 0.625em;
 }
 
 #procedure-page h2,
@@ -570,6 +582,86 @@ main.main-page section.blue-color .container {
 
 
 /* Main Page */
+#myCarousel {
+    margin-top: -0.625em;
+}
+
+.carousel-indicators li {
+    border-color: #073457;
+    background-color: #073457;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 2px #073457;
+}
+
+#senior-couple .carousel-caption {
+    color: #073457;
+    text-shadow: none;
+    top: 65%;
+}
+
+.carousel-caption h2 {
+    font-size: 3.125em;
+}
+
+.carousel-caption p {
+    font-size: 1.875em;
+    margin-top: -0.625em;
+    margin-bottom: 0.3125em;
+    padding: 0.3125em 0!important;
+    line-height:  1.25em;
+    border-bottom: 2px solid #fff;
+}
+
+#senior-couple .carousel-caption p {
+    border-bottom: 2px solid #073457;
+}
+
+.carousel-caption h3 {
+    font-size: 2.5em;
+}
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0.8;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
 main.main-page section {
     padding-top: 5em;
     padding-bottom: 5em;
@@ -581,7 +673,7 @@ main.main-page section.blue-color {
 }
 
 main.main-page section:first-of-type {
-    background: url("../img/drDanielFortino/Fortino4a.png") left bottom/auto no-repeat;
+    background: #fff url("../img/drDanielFortino/Fortino4a.png") left bottom/auto no-repeat;
     padding-bottom: 0;
 }
 
@@ -596,6 +688,7 @@ main.main-page section:last-of-type {
 }
 
 main.main-page section.badge-logo {
+    background-color: #fff;
     padding-top: 3.125em;
     padding-bottom: 3.125em;
     margin-left: auto;
@@ -695,6 +788,10 @@ main.main-page section.full-arch .row {
     margin-bottom: 0;
 }
 
+main.main-page section.promote-procedure {
+    background-color: #fff;
+}
+
 @media (max-width: 1299px) and (min-width: 1100px) {
     main.main-page section.promote-procedure > div {
         width: 18%;
@@ -776,8 +873,8 @@ main.main-page section.promote-procedure h3 {
     font-size: 0.9375em;
     border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
     border-top: 1px solid rgba(179, 179, 179, 0.7);
-    margin-top: 5px;
-    padding-top: 2px;
+    margin-top: 0.3125em;
+    padding-top: 0.125em;
     display: none;
 }
 .hvrbox.active .hvrbox-text_mobile {
@@ -823,9 +920,6 @@ main.main-page section.promote-procedure h3 {
     padding: 1.125em;
     text-align: left;
     outline: none;
-}
-
-#procedure-page h3.accordion {
     overflow: hidden;
     cursor: pointer;
     transition: 0.4s;
@@ -856,9 +950,12 @@ main.main-page section.promote-procedure h3 {
     font-size: 1.125em;
 }
 
+#procedure-page .panel h3 {
+    font-size: 1.25em;
+}
+
 #procedure-page p,
 #procedure-page li {
-    font-size: 1.25em;
     font-weight: 400;
     line-height: 1.875em;
     margin-bottom: 1.25em;
@@ -958,45 +1055,18 @@ form#referral-form textarea {
     outline: none;
 }
 
-form#referral-form .options_container {
-    width: 100%;
-    margin: 0.3125em 0 1.25em 0;
-}
-
-form#referral-form .options_container .option_field {
-    float: left;
-    padding: 0 1% 0 0;
-}
-
-form#referral-form .options_container .option_field input {
-    float: left;
-    margin: 1px 0.3125em 0 0;
-    color: #565656;
-    box-shadow: none;
-}
-
-form#referral-form .options_container .option_field label {
-    float: left;
-    display: block;
-    padding: 0 0 0.125em 0;
-    font-style: normal;
-    font-size: 0.875em;
-    font-weight: normal;
-    line-height: 0.875em;
-}
-
 form#referral-form select {
     padding: 0.3125em;
     border-color: #01559f;
 }
 
-form#referral-form input[type="file"] {
-    background: none;
-    box-shadow: none;
-    display: none;
+form#referral-form .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 0.625em;
 }
 
-form#referral-form .custom-file-upload {
+form#referral-form .fileUpload label {
     display: inline-block;
     background: #e6ecf4;
     color: #01559f;
@@ -1004,6 +1074,25 @@ form#referral-form .custom-file-upload {
     padding: 0.625em;
     margin-right: 0.5em;
     cursor: pointer;
+}
+
+form#referral-form .fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 1.25em;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+form#referral-form input#uploadFile {
+    background: none;
+    box-shadow: none;
+    display: none;
+    margin-top: 0.625em;
 }
 
 form#referral-form #submit_button {
@@ -1064,7 +1153,7 @@ form#referral-form #submit_button {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     display: none;
-    z-index: 200;
+    z-index: 2000;
 }
 
 #overlayContent {
@@ -1075,7 +1164,7 @@ form#referral-form #submit_button {
     text-align: center;
     display: none;
     overflow: hidden;
-    z-index: 999;
+    z-index: 2999;
 }
 
 #overlayContent img {
@@ -1110,6 +1199,12 @@ form#referral-form #submit_button {
 }
 
 #contact-page form {
+    padding-bottom: 1.875em;
+}
+
+#contact-page form input,
+#contact-page form textarea,
+#contact-page .g-recaptcha iframe {
     box-shadow: 0 0 2px 1px #476CA5;
 }
 
@@ -1124,6 +1219,17 @@ form#referral-form #submit_button {
 #contact-page textarea {
     margin-bottom: 0.9375em;
 }
+
+#contact-page .g-recaptcha iframe {
+    border: 1px solid #0A4B7D;
+    border-radius: 3px;
+    padding-top: 0;
+}
+
+#contact-page .btn.pull-left {
+    margin-top: 1.875em;
+}
+
 #contact-page section {
     margin-bottom: 1.25em;
 }
@@ -1153,6 +1259,21 @@ form#referral-form #submit_button {
 #contact-page iframe {
     width: 100%;
     padding-top: 1.25em;
+}
+
+/* Submitted Form */
+.submitted p {
+    font-size: 1.25em;
+    padding-bottom: 2.5em;
+}
+
+.submitted p:first-of-type {
+    color: #0A4B7D;
+    font-size: 1.875em;
+    font-weight: 600;
+    line-height: 1.25em;
+    margin-top: 3.125em;
+    padding-bottom: 1.25em;
 }
 
 @media screen and (min-width: 1200px) {
@@ -1188,10 +1309,22 @@ form#referral-form #submit_button {
     }
 }
 
-@media screen and (max-width: 1350px) {
-    main.main-page section.doctor-intro p {
-        width: 75%;
+@media screen and (max-width: 1430px) {
+    .carousel-caption {
+        width: 60%;
     }
+}
+
+@media screen and (max-width: 1350px) {
+    main.main-page section:first-of-type .container {
+        width: 90%;
+        padding-left: 10%;
+    }
+
+    main.main-page section.doctor-intro p {
+        width: 71%;
+    }
+
 
     main.main-page section.full-arch {
         background-size: 35% 90%;
@@ -1211,20 +1344,13 @@ form#referral-form #submit_button {
     }
 }
 
-@media screen and (max-width: 1350px) {
-    main.main-page section:first-of-type .container {
-        width: 90%;
-        padding-left: 10%;
-    }
-
-    main.main-page section.doctor-intro p {
-        width: 71%;
-    }
-}
-
 @media screen and (max-width: 1200px) {
     main#main-content {
         padding-top: 14.063em;
+    }
+
+    .carousel-caption {
+        width: 70%;
     }
 
     main.main-page section:first-of-type .container {
@@ -1242,6 +1368,12 @@ form#referral-form #submit_button {
 
     main.main-page section.promote-procedure {
         padding-bottom: 3.125em;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .carousel-caption {
+        width: 80%;
     }
 }
 
@@ -1308,6 +1440,10 @@ form#referral-form #submit_button {
 }
 
 @media screen and (max-width: 950px) {
+    #myCarousel {
+        margin-top: -1.25em;
+    }
+
     main.main-page section:first-of-type .container {
         width: 90%;
         padding-left: 20%;
@@ -1319,6 +1455,21 @@ form#referral-form #submit_button {
 
     main.main-page section.doctor-intro p {
         width: 60%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .carousel-caption {
+        width: 75%;
+    }
+    .carousel-caption h2 {
+        font-size: 2.188em;
+    }
+    .carousel-caption p {
+        font-size: 1.25em;
+    }
+    .carousel-caption h3 {
+        font-size: 1.875em;
     }
 }
 
@@ -1395,6 +1546,10 @@ form#referral-form #submit_button {
         margin: 0 auto;
     }
 
+    #senior-couple {
+        margin-top: 2.5em;
+    }
+
     main.main-page section.doctor-intro {
         background-size: 40% 85%;
     }
@@ -1453,9 +1608,29 @@ form#referral-form #submit_button {
     #overlayContent img {
         width: 25em;
     }
+
+    #contact-page .intro {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 750px) {
+    .carousel-caption {
+        top: 45%;
+    }
+
+    #senior-couple .carousel-caption h2 {
+        font-size: 1.875em;
+    }
+
+    #senior-couple .carousel-caption p {
+        font-size: 1em;
+    }
+
+    #senior-couple .carousel-caption h3 {
+        font-size: 1.5625em;
+    }
+
     main.main-page section:first-of-type,
     main.main-page section.doctor-intro {
         background-image: none;
@@ -1463,8 +1638,8 @@ form#referral-form #submit_button {
 
     main.main-page section:first-of-type .container {
         width: 100%;
-        padding-left: 8%;
-        padding-right: 8%;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     main.main-page section.doctor-intro .container {
@@ -1473,6 +1648,27 @@ form#referral-form #submit_button {
 
     main.main-page section.doctor-intro p {
         width: 85%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #senior-couple .carousel-caption {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carousel-caption {
+        top: 40%;
+    }
+    .carousel-caption h2 {
+        font-size: 1.875em;
+    }
+    .carousel-caption p {
+        font-size: 1em;
+    }
+    .carousel-caption h3 {
+        font-size: 1.5625em;
     }
 }
 
@@ -1504,6 +1700,12 @@ form#referral-form #submit_button {
     }
 }
 
+@media screen and (max-width: 480px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 400px) {
     #footer-header img {
         max-width: 12.5em;
@@ -1514,79 +1716,3 @@ form#referral-form #submit_button {
     }
 
 }
-
-
-
-
-
-
-
-.crossfade {
-    position: relative;
-    background: #e4f5fd url("../img/main.jpg") top left/cover no-repeat;
-    margin-top: -10px;
-}
-
-.crossfade > div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    margin: 0;
-    color: #fff;
-    /*color: #073457;*/
-    text-align: center;
-}
-
-.crossfade h2 {
-    font-size: 3.125em;
-    text-shadow: 2px 2px 2px rgba(255,255,255,0.5);
-}
-
-@media screen and (max-width: 500px) {
-    .crossfade h2 {
-        font-size: 2.5em;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .crossfade h2 {
-        font-size: 1.875em;
-    }
-}
-
-.crossfade p {
-    font-size: 1.875em;
-    margin-top: -0.625em;
-    margin-bottom: 5px;
-    padding: 5px 0!important;
-    line-height:  1.25em;
-    border-bottom: 2px solid #fff;
-    text-shadow: 2px 2px 2px rgba(255,255,255,0.5);
-}
-
-@media screen and (max-width: 1100px) {
-    .crossfade p {
-        font-size: 1.25em;
-    }
-}
-
-.crossfade h3 {
-    font-size: 2.5em;
-    text-shadow: 2px 2px 2px rgba(255,255,255,0.5);
-}
-
-@media screen and (max-width: 900px) {
-    .crossfade h3 {
-        font-size: 1.875em;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .crossfade h3 {
-        font-size:  1.25em;
-    }
-}
-
-/*https://www.cssscript.com/css-only-crossfading-background-slideshow/*/
