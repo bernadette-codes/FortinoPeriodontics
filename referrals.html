@@ -109,8 +109,7 @@
             <div class="referral-form-container">
                 <p>*PATIENT INFORMATION IS ENCRYPTED AND SECURE</p>
 
-                <form id="referral-form" action="referral-form.php" method="POST" >
-                      <!--enctype="multipart/form-data">-->
+                <form id="referral-form" action="referral-form.php" method="POST" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <label for="referring-office">Referring Office</label>
@@ -196,11 +195,12 @@
                         </select>
                     </div>
 
-                    <label>Additional files</label>
-                    <i style='font-size: 80%'>Max file upload size: <!-- max_upload: 10485760  max_post: 8388608  memory_limit: 134217728 -->8.00MB</i>
+                    <label>Additional Files</label>
+                    <p><small>Hold down the CTRL key to select multiple files.</small></p>
+                    <em style='font-size: 80%'>Max file upload size: <!-- max_upload: 10485760  max_post: 8388608  memory_limit: 134217728 -->8.00MB</em>
                     <div class="form-group fileUpload">
                         <label for="additional-files">Browse</label>
-                        <input id="additional-files" name="additional-files"  type="file" class="upload" />
+                        <input id="additional-files" name="additional-files" type="file" class="upload" multiple/>
                     </div>
                     <input id="uploadFile" disabled="disabled"/>
 
@@ -229,8 +229,8 @@
                     </div>
 
                 </form>
-            </div>
 
+            </div>
         </div>
     </main>
 
@@ -369,19 +369,13 @@
 <script type="text/javascript" src="assets/js/jquery-key-restrictions.js"></script>
 
 <script type="text/javascript">
-    document.getElementById("additional-files").onchange = function () {
-        document.getElementById("uploadFile").style.display = "block";
-        document.getElementById("uploadFile").value = this.value;
-    };
+
 
     $(document).ready(function() {
-        $("#referring-office").lettersOnly();
-        $("#referring-doctor").lettersOnly();
         $("#patient-name").lettersOnly();
         $("#patient-number").numbersOnly();
 
     });
-
 
 </script>
 
