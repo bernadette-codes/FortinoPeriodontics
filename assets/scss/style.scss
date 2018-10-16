@@ -2,7 +2,6 @@
 @import "mixins";
 @import "variables";
 
-
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -101,8 +100,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0;
 }
 
-.btn,
-.btn-alt {
+%buttonLink {
   display: inline-block;
   position: relative;
   min-width: 200px;
@@ -118,6 +116,13 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .btn {
+  @extend %buttonLink;
+}
+.btn-alt {
+  @extend %buttonLink;
+}
+
+.btn {
   @include color($mainColorBase, $white);
 }
 
@@ -125,9 +130,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   @include color($white, $mainColorBase);
 }
 
-.btn:hover,
-.btn-alt:hover {
+%buttonLinkHover {
   @include color($darkerColorBase, $white);
+}
+
+.btn:hover {
+  @extend %buttonLinkHover;
+}
+.btn-alt:hover {
+  @extend %buttonLinkHover;
 }
 
 input {
@@ -343,9 +354,15 @@ nav li a {
   @include font(1em, 400);
 }
 
-#main-header .header-contact > a:hover,
-#main-header .header-contact address a:hover {
+%headerLinkHover {
   color: $mainColorBase;
+}
+
+#main-header .header-contact > a:hover {
+  @extend %headerLinkHover;
+}
+#main-header .header-contact address a:hover {
+  @extend %headerLinkHover;
 }
 
 #main-header .header-contact > a.btn:hover {
@@ -395,11 +412,19 @@ footer #footer-header .col-md-4 {
   margin: $fiftyPixel 0;
 }
 
-footer h2,
-footer .well-title h3 {
+%footerHeader {
   @include font($twentyFivePixel, 700);
   margin-bottom: 0;
 }
+
+footer h2 {
+  @extend %footerHeader;
+}
+
+footer .well-title h3 {
+  @extend %footerHeader;
+}
+
 footer h3 {
   @include font($eighteenPixel, 700);
   letter-spacing: 1px;
@@ -467,30 +492,83 @@ footer .hours label {
   color: $white;
 }
 
-#about-page,
-#procedure-page,
-#patient-page,
-#referral-page,
-#gallery-page,
-#contact-page {
+%pagesMargin {
   @include marginCenter($pagesTopBottomMargin);
 }
 
-main.main-page section,
-#about-page,
-footer #footer-header {
+#about-page {
+  @extend %pagesMargin;
+}
+
+#procedure-page {
+  @extend %pagesMargin;
+}
+
+#patient-page {
+  @extend %pagesMargin;
+}
+
+#referral-page {
+  @extend %pagesMargin;
+}
+
+#gallery-page {
+  @extend %pagesMargin;
+}
+
+#contact-page {
+  @extend %pagesMargin;
+}
+
+%mobileSidePadding {
   @include paddingLR($mobileSidePadding, $mobileSidePadding);
 }
 
-#about-page h2,
-#procedure-page,
-#patient-page,
-#referral-page,
-#gallery-page,
-#contact-page,
-footer #appointment-form {
+main.main-page section {
+  @extend %mobileSidePadding;
+}
+
+#about-page {
+  @extend %mobileSidePadding;
+}
+
+footer #footer-header {
+  @extend %mobileSidePadding;
+}
+
+%pagesSidePadding {
   @include paddingLR($pagesSidePadding, $pagesSidePadding);
 }
+
+#about-page h2 {
+  @extend %pagesSidePadding;
+}
+
+#procedure-page {
+  @extend %pagesSidePadding;
+}
+
+#patient-page {
+  @extend %pagesSidePadding;
+}
+
+#referral-page {
+  @extend %pagesSidePadding;
+}
+
+#gallery-page {
+  @extend %pagesSidePadding;
+}
+
+#contact-page {
+  @extend %pagesSidePadding;
+}
+
+footer #appointment-form {
+  @extend %pagesSidePadding;
+}
+
+
 
 main.main-page button a:hover,
 main.main-page button a:visited,
@@ -528,16 +606,32 @@ main.main-page section.blue-color .container {
   @include paddingLR($mobileSidePadding, $mobileSidePadding);
 }
 
-#procedure-page h2,
-#patient-page h2,
-#referral-page h2,
-#gallery-page h2,
-#contact-page h2{
+%pagesH2 {
   color: $mainColorBase;
   @include font($thirtyPixel, 600);
   line-height: $twentyPixel;
   margin-bottom: $thirtyPixel;
   clear: right;
+}
+
+#procedure-page h2 {
+  @extend %pagesH2;
+}
+
+#patient-page h2 {
+  @extend %pagesH2;
+}
+
+#referral-page h2 {
+  @extend %pagesH2;
+}
+
+#gallery-page h2 {
+  @extend %pagesH2;
+}
+
+#contact-page h2 {
+  @extend %pagesH2;
 }
 
 #patient-page h3 {
@@ -683,19 +777,32 @@ main.main-page section p {
   margin-bottom: $twentyPixel;
 }
 
-main.main-page button,
-#procedure-page button {
+%blueButton {
   background-color: $mainColorBase;
   @include borderNone($thirtyPixel);
   padding-bottom: $twoPixel;
   margin-top: $fifteenPixel;
 }
 
-main.main-page button a,
-#procedure-page button a{
+main.main-page button {
+  @extend %blueButton;
+}
+
+#procedure-page button {
+  @extend %blueButton;
+}
+
+%blueButtonLink {
   font-size: $eighteenPixel;
   color: $white;
   padding: $fifteenPixel $thirtyFivePixel;
+}
+
+main.main-page button a {
+  @extend %blueButtonLink;
+}
+#procedure-page button a{
+  @extend %blueButtonLink;
 }
 
 main.main-page button:hover,
@@ -964,16 +1071,25 @@ video#perio-video {
   @include border($size:2px, $color: #70b1e3);
 }
 
-/* Download Forms */
-#patient-page a,
-#referral-page a {
+#patient-page a { /* Download Forms */
   cursor: pointer;
 }
 
-#patient-page a:hover,
-#referral-page a:hover {
+#referral-page a { /* Download Forms */
+  cursor: pointer;
+}
+
+%downloadFormLink {
   color: $softColorBase;
   font-weight: 600;
+}
+
+#patient-page a:hover {
+  @extend %downloadFormLink;
+}
+
+#referral-page a:hover {
+  @extend %downloadFormLink;
 }
 
 /* Referral Page */
@@ -1196,12 +1312,18 @@ form#referral-form #submit_button {
   margin-bottom: $eightPixel;
 }
 
-#patient-page label,
-#contact-page label {
+%scheduleLabel {
   display: inline-block;
   width: $eightyPixel;
   text-align: left;
   font-weight: 600;
+}
+
+#patient-page label {
+  @extend %scheduleLabel;
+}
+#contact-page label {
+  @extend %scheduleLabel;
 }
 
 #contact-page section.contact-info p {
