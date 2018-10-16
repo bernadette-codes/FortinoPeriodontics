@@ -1,6 +1,6 @@
-@import "extend";
-@import "mixins";
 @import "variables";
+@import "mixins";
+@import "extend";
 
 html {
   -ms-text-size-adjust: 100%;
@@ -100,21 +100,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0;
 }
 
-%buttonLink {
-  display: inline-block;
-  position: relative;
-  min-width: 200px;
-  font-family: Lato, sans-serif;
-  @include font($twelvePixel, 900);
-  text-transform: uppercase;
-  text-align: center;
-  margin: $fifteenPixel $tenPixel;
-  padding: $twelvePixel;
-  border: none;
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
-}
-
 .btn {
   @extend %buttonLink;
 }
@@ -128,10 +113,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .btn-alt {
   @include color($white, $mainColorBase);
-}
-
-%buttonLinkHover {
-  @include color($darkerColorBase, $white);
 }
 
 .btn:hover {
@@ -354,10 +335,6 @@ nav li a {
   @include font(1em, 400);
 }
 
-%headerLinkHover {
-  color: $mainColorBase;
-}
-
 #main-header .header-contact > a:hover {
   @extend %headerLinkHover;
 }
@@ -410,11 +387,6 @@ footer {
 
 footer #footer-header .col-md-4 {
   margin: $fiftyPixel 0;
-}
-
-%footerHeader {
-  @include font($twentyFivePixel, 700);
-  margin-bottom: 0;
 }
 
 footer h2 {
@@ -492,10 +464,6 @@ footer .hours label {
   color: $white;
 }
 
-%pagesMargin {
-  @include marginCenter($pagesTopBottomMargin);
-}
-
 #about-page {
   @extend %pagesMargin;
 }
@@ -520,10 +488,6 @@ footer .hours label {
   @extend %pagesMargin;
 }
 
-%mobileSidePadding {
-  @include paddingLR($mobileSidePadding, $mobileSidePadding);
-}
-
 main.main-page section {
   @extend %mobileSidePadding;
 }
@@ -534,10 +498,6 @@ main.main-page section {
 
 footer #footer-header {
   @extend %mobileSidePadding;
-}
-
-%pagesSidePadding {
-  @include paddingLR($pagesSidePadding, $pagesSidePadding);
 }
 
 #about-page h2 {
@@ -604,14 +564,6 @@ main.main-page section.blue-color {
 
 main.main-page section.blue-color .container {
   @include paddingLR($mobileSidePadding, $mobileSidePadding);
-}
-
-%pagesH2 {
-  color: $mainColorBase;
-  @include font($thirtyPixel, 600);
-  line-height: $twentyPixel;
-  margin-bottom: $thirtyPixel;
-  clear: right;
 }
 
 #procedure-page h2 {
@@ -777,25 +729,12 @@ main.main-page section p {
   margin-bottom: $twentyPixel;
 }
 
-%blueButton {
-  background-color: $mainColorBase;
-  @include borderNone($thirtyPixel);
-  padding-bottom: $twoPixel;
-  margin-top: $fifteenPixel;
-}
-
 main.main-page button {
   @extend %blueButton;
 }
 
 #procedure-page button {
   @extend %blueButton;
-}
-
-%blueButtonLink {
-  font-size: $eighteenPixel;
-  color: $white;
-  padding: $fifteenPixel $thirtyFivePixel;
 }
 
 main.main-page button a {
@@ -1079,11 +1018,6 @@ video#perio-video {
   cursor: pointer;
 }
 
-%downloadFormLink {
-  color: $softColorBase;
-  font-weight: 600;
-}
-
 #patient-page a:hover {
   @extend %downloadFormLink;
 }
@@ -1310,13 +1244,6 @@ form#referral-form #submit_button {
   font-size: $twentyFourPixel;
   color: $mainColorBase;
   margin-bottom: $eightPixel;
-}
-
-%scheduleLabel {
-  display: inline-block;
-  width: $eightyPixel;
-  text-align: left;
-  font-weight: 600;
 }
 
 #patient-page label {
