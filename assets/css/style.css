@@ -673,7 +673,7 @@ main.main-page section.blue-color {
 }
 
 main.main-page section:first-of-type {
-    background: #fff url("../img/drDanielFortino/Fortino4a.png") left bottom/auto no-repeat;
+    background: #fff url("http://drfortinoperiodontics.com/assets/img/drDanielFortino/Fortino4a.png") left bottom/auto no-repeat;
     padding-bottom: 0;
 }
 
@@ -732,7 +732,7 @@ main.main-page button:active {
 }
 
 main.main-page section.doctor-intro {
-    background: #e4f5fd url("../img/drDanielFortino/Fortino2.png") 90% bottom/contain no-repeat;
+    background: #e4f5fd url("http://drfortinoperiodontics.com/assets/img/drDanielFortino/Fortino2.png") 90% bottom/contain no-repeat;
     height: 500px;
     padding-top: 5em;
     padding-bottom: 5em;
@@ -754,7 +754,7 @@ main.main-page .badge-logo img {
 main.main-page section.full-arch {
     position: relative;
     height: auto;
-    background: #e4f5fd url("../img/front-page/happy-couple.png") right bottom/contain no-repeat;
+    background: #e4f5fd url("http://drfortinoperiodontics.com/assets/img/front-page/happy-couple.png") right bottom/contain no-repeat;
 }
 
 main.main-page section.full-arch h3 {
@@ -1178,6 +1178,10 @@ form#referral-form #submit_button {
 }
 
 /* Contact Page */
+#contact-page .row:nth-of-type(2){
+    padding-bottom: 1em;
+}
+
 #contact-page .profile-photo img {
     border: 2px solid #0A4B7D;
     border-radius: 3px;
@@ -1259,6 +1263,10 @@ form#referral-form #submit_button {
 #contact-page iframe {
     width: 100%;
     padding-top: 1.25em;
+}
+
+#contact-page .hours span {
+    visibility: hidden;
 }
 
 /* Submitted Form */
@@ -1425,13 +1433,24 @@ form#referral-form #submit_button {
     }
 
     #contact-page section:first-of-type {
-        margin-top: 6.25em;
-        padding-top: 1.875em;
-        border-top: 1px solid lightgray;
+        padding-bottom: 1.875em;
     }
 
     #contact-page section {
         padding-left: 1.5625em;
+    }
+
+    #contact-page section:nth-child(1)  {
+        padding-top: 1.875em;
+        padding-bottom: 0;
+    }
+
+    #contact-page iframe {
+        padding-top: 0;
+    }
+
+    #contact-page .hours span {
+        display: none;
     }
 
     #footer-header img {
@@ -1694,10 +1713,6 @@ form#referral-form #submit_button {
     #gallery-page section img {
         pointer-events: none;
     }
-
-    #contact-page section:first-of-type {
-        margin-top: 6.25em;
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -1707,6 +1722,7 @@ form#referral-form #submit_button {
 }
 
 @media screen and (max-width: 400px) {
+
     #footer-header img {
         max-width: 12.5em;
     }
