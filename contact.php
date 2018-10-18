@@ -25,7 +25,7 @@ if ($_POST) {
 	$msg 	.= "Message: $contactMessage \n";
 
 	$from_email = "drfortinoperiodontics"; //from mail, it is mandatory with some hosts
-    $recipient_email = 'bernadette@englemaninvest.com'; //recipient email (most cases it is your personal email)
+    $recipient_email = 'drfortinoperio@gmail.com'; //recipient email (most cases it is your personal email)
 
 	// boundary
     $semi_rand = md5(time());
