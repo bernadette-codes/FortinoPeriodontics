@@ -1,0 +1,75 @@
+@import "variables";
+@import "mixins";
+
+%buttonLink {
+  display: inline-block;
+  position: relative;
+  min-width: 200px;
+  font-family: Lato, sans-serif;
+  @include font($twelvePixel, 900);
+  text-transform: uppercase;
+  text-align: center;
+  margin: $fifteenPixel $tenPixel;
+  padding: $twelvePixel;
+  border: none;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+%buttonLinkHover {
+  @include color($darkerColorBase, $white);
+}
+
+%headerLinkHover {
+  color: $mainColorBase;
+}
+
+%footerHeader {
+  @include font($twentyFivePixel, 700);
+  margin-bottom: 0;
+}
+
+%pagesMargin {
+  @include marginCenter($pagesTopBottomMargin);
+}
+
+%mobileSidePadding {
+  @include paddingLR($mobileSidePadding, $mobileSidePadding);
+}
+
+%pagesSidePadding {
+  @include paddingLR($pagesSidePadding, $pagesSidePadding);
+}
+
+%pagesH2 {
+  color: $mainColorBase;
+  @include font($thirtyPixel, 600);
+  line-height: $twentyPixel;
+  margin-bottom: $thirtyPixel;
+  clear: right;
+}
+
+%blueButton {
+  background-color: $mainColorBase;
+  @include borderNone($thirtyPixel);
+  padding-bottom: $twoPixel;
+  margin-top: $fifteenPixel;
+}
+
+%blueButtonLink {
+  font-size: $eighteenPixel;
+  color: $white;
+  padding: $fifteenPixel $thirtyFivePixel;
+}
+
+%downloadFormLink {
+  color: $softColorBase;
+  font-weight: 600;
+}
+
+%scheduleLabel {
+  display: inline-block;
+  width: $eightyPixel;
+  text-align: left;
+  font-weight: 600;
+}
