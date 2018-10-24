@@ -197,7 +197,8 @@ header {
   top: 0;
   background-color: $white;
   text-align: center;
-  -webkit-transition: margin .3s;
+  -webkit-transition: margin 0.3s;
+  -o-transition: margin 0.3s;
   transition: margin 0.3s;
   border-bottom: 1px solid $mainColorBase;
   box-shadow: 0 1px 2px $mainColorBase;
@@ -286,6 +287,8 @@ nav li a {
 
 #main-header {
   padding: $fivePixel 0;
+  -webkit-transition: min-height 0.3s;
+  -o-transition: min-height 0.3s;
   transition: min-height 0.3s;
 }
 
@@ -329,10 +332,12 @@ nav li a {
 #main-header .header-contact address a {
   display: inline-block;
   vertical-align: middle;
-  transition: color .3s;
   color: #3d3a35;
   font-family: Lato, sans-serif;
   @include font(1em, 400);
+  -webkit-transition: color .3s;
+  -o-transition: color .3s;
+  transition: color .3s;
 }
 
 #main-header .header-contact > a:hover {
@@ -367,11 +372,15 @@ nav li a {
 #main-header > div > a {
   max-width: 440px;
   z-index: 100;
+  -webkit-transition: max-width .3s;
+  -o-transition: max-width .3s;
   transition: max-width .3s;
 }
 
 #main-header > div > a img.header-full {
   width: 100%;
+  -webkit-transition: width .3s;
+  -o-transition: width .3s;
   transition: width .3s;
 }
 
@@ -664,6 +673,8 @@ main.main-page section.blue-color .container {
 
 .carousel-fade .carousel-inner .item {
   opacity: 0.8;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
   transition-property: opacity;
 }
 
@@ -858,9 +869,8 @@ main.main-page section.promote-procedure h3 {
   height: 100%;
   @include color(rgba(0, 0, 0, 0.6), $white);
   padding: $fifteenPixel;
-  -moz-transition: all 0.4s ease-in-out 0s;
   -webkit-transition: all 0.4s ease-in-out 0s;
-  -ms-transition: all 0.4s ease-in-out 0s;
+  -o-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
 }
 .hvrbox:hover .hvrbox-layer_top,
@@ -929,6 +939,8 @@ main.main-page section.promote-procedure h3 {
   outline: none;
   overflow: hidden;
   cursor: pointer;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
