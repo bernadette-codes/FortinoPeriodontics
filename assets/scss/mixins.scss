@@ -1,0 +1,43 @@
+@mixin color($bg, $color) {
+  background-color: $bg;
+  color: $color;
+}
+
+@mixin font($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin marginCenter($topBottom: 0) {
+  margin: $topBottom auto;
+}
+
+@mixin marginLR($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+@mixin marginTB($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+@mixin marginPadding($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin paddingLR($left, $right) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin paddingTB($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
