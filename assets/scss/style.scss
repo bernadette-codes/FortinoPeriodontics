@@ -1188,6 +1188,15 @@ main.main-page {
     box-shadow: 0 0 2px 1px $softColorBase;
   }
 
+  .social-ig { /* Instagram */
+    color: #0A4B7D;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 1.25em auto;
+  }
+
   .fa-instagram {
     font-size: $thirtyPixel;
   }
@@ -1293,7 +1302,8 @@ main.main-page {
     padding-top: 168px;
   }
 
-  body.page_index.scrolled header, body.scrolled header {
+  body.page_index.scrolled header,
+  body.scrolled header {
     position: fixed;
     background-color: $white;
   }
@@ -1316,37 +1326,38 @@ main.main-page {
 }
 
 @media screen and (max-width: 1430px) {
-  .carousel-caption {
+  main.main-page .carousel-caption {
     width: 60%;
   }
 }
 
 @media screen and (max-width: 1350px) {
-  main.main-page section:first-of-type .container {
-    width: 90%;
-    padding-left: 10%;
-  }
+  main.main-page {
+    section:first-of-type .container {
+      width: 90%;
+      padding-left: 10%;
+    }
 
-  main.main-page section.doctor-intro p {
-    width: 71%;
-  }
+    section.doctor-intro p {
+      width: 71%;
+    }
 
+    section.full-arch {
+      background-size: 35% 90%;
 
-  main.main-page section.full-arch {
-    background-size: 35% 90%;
-  }
+      .text-left h3 {
+        margin-bottom: $fifteenPixel;
+      }
 
-  main.main-page section.full-arch .text-left h3 {
-    margin-bottom: $fifteenPixel;
-  }
+      p {
+        width: 70%;
+        margin-bottom: $tenPixel;
+      }
 
-  main.main-page section.full-arch p {
-    width: 70%;
-    margin-bottom: $tenPixel;
-  }
-
-  main.main-page section.full-arch .text-center h3 {
-    margin-top: $fifteenPixel;
+      .text-center h3 {
+        margin-top: $fifteenPixel;
+      }
+    }
   }
 }
 
@@ -1355,136 +1366,147 @@ main.main-page {
     padding-top: 14.063em;
   }
 
-  .carousel-caption {
-    width: 70%;
-  }
+  main.main-page {
+    .carousel-caption {
+      width: 70%;
+    }
 
-  main.main-page section:first-of-type .container {
-    width: 90%;
-    padding-left: 15%;
-  }
+    section:first-of-type .container {
+      width: 90%;
+      padding-left: 15%;
+    }
 
-  main.main-page section.doctor-intro p {
-    width: 67%;
-  }
+    section.doctor-intro p {
+      width: 67%;
+    }
 
-  main.main-page section.full-arch {
-    background-size: 40% 90%;
-  }
+    section.full-arch {
+      background-size: 40% 90%;
+    }
 
-  main.main-page section.promote-procedure {
-    padding-bottom: $fiftyPixel;
+    section.promote-procedure {
+      padding-bottom: $fiftyPixel;
+    }
   }
 }
 
 @media screen and (max-width: 1030px) {
-  .carousel-caption {
+  main.main-page .carousel-caption {
     width: 80%;
   }
 }
 
 @media screen and (max-width: 1020px) {
-  header, body.page_index header {
+  header,
+  body.page_index header {
     background-color: $white;
   }
 
   main#main-content {
     padding-top: 12.5em;
   }
-
 }
 
 @media screen and (max-width: 992px) {
-  main.main-page section.doctor-intro {
-    height: auto;
-  }
+  main.main-page {
+    section.doctor-intro {
+      height: auto;
 
-  main.main-page section.doctor-intro p {
-    width: 65%;
-  }
+      p {
+        width: 65%;
+      }
+    }
 
-  main.main-page .badge-logo div:nth-child(1),
-  main.main-page .badge-logo div:nth-child(2) {
-    padding-bottom: $thirtyFivePixel;
-  }
+    section.badge-logo div:nth-child(1),
+    section.badge-logo div:nth-child(2) {
+      padding-bottom: $thirtyFivePixel;
+    }
 
-  main.main-page .badge-logo img {
-    height: 4.688em;
-  }
+    section.badge-logo img {
+      height: 4.688em;
+    }
 
-  main.main-page section.full-arch {
-    background-size: 40% 85%;
+    section.full-arch {
+      background-size: 40% 85%;
+    }
   }
 
   #about-page p {
     @include marginLR($twentyFivePixel, $twentyFivePixel);
   }
 
-  video#perio-video {
+  #procedure-page video#perio-video {
     width: 70%;
     height: 70%;
   }
-  /*Wisdom Teeth*/
-  #procedure-page .well h4 {
+
+  #procedure-page .well h4 { /*Wisdom Teeth*/
     margin-top: $twentyPixel;
   }
 
-  #contact-page section:first-of-type {
-    padding-bottom: $thirtyPixel;
+  #contact-page {
+    section {
+      padding-left: $twentyFivePixel;
+
+      &:first-of-type {
+        padding-bottom: $thirtyPixel;
+      }
+
+      &:nth-child(1)  {
+        @include paddingTB($thirtyPixel, 0);
+      }
+    }
+
+    iframe {
+      padding-top: 0;
+    }
+
+    .hours span {
+      display: none;
+    }
   }
 
-  #contact-page section {
-    padding-left: $twentyFivePixel;
-  }
-
-  #contact-page section:nth-child(1)  {
-    @include paddingTB($thirtyPixel, 0);
-  }
-
-  #contact-page iframe {
-    padding-top: 0;
-  }
-
-  #contact-page .hours span {
-    display: none;
-  }
-
-  #footer-header img {
+  footer #footer-header img {
     max-width: 18.75em;
   }
 }
 
 @media screen and (max-width: 950px) {
-  #myCarousel {
-    margin-top: -$twentyPixel;
-  }
+  main.main-page {
+    #myCarousel {
+      margin-top: -$twentyPixel;
+    }
 
-  main.main-page section:first-of-type .container {
-    width: 90%;
-    padding-left: 20%;
-  }
+    section:first-of-type .container {
+      width: 90%;
+      padding-left: 20%;
+    }
 
-  main.main-page section.doctor-intro {
-    background-position: right bottom;
-  }
+    section.doctor-intro {
+      background-position: right bottom;
 
-  main.main-page section.doctor-intro p {
-    width: 60%;
+      p {
+        width: 60%;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 900px) {
-  .carousel-caption {
+  main.main-page .carousel-caption {
     width: 75%;
-  }
-  .carousel-caption h2 {
-    font-size: $thirtyFivePixel;
-  }
-  .carousel-caption p {
-    font-size: $twentyPixel;
-  }
-  .carousel-caption h3 {
-    font-size: $thirtyPixel;
+
+    h2 {
+      font-size: $thirtyFivePixel;
+    }
+
+    p {
+      font-size: $twentyPixel;
+    }
+
+    h3 {
+      font-size: $thirtyPixel;
+    }
   }
 }
 
@@ -1497,28 +1519,30 @@ main.main-page {
     position: static !important;
   }
 
-  header #responsive-nav {
-    display: block;
-  }
+  header {
+    nav #responsive-nav {
+      display: block;
+    }
 
-  header #contact-details {
-    display: none;
+    #contact-details {
+      display: none;
+    }
   }
 
   nav {
-    width: 100%;
     position: fixed;
+    width: 100%;
     z-index: 999;
-  }
 
-  nav > ul {
-    display: none;
-    text-align: center;
-    margin: 0;
-  }
+    > ul {
+      display: none;
+      text-align: center;
+      margin: 0;
+    }
 
-  nav li {
-    margin: 0 1%;
+    ul li {
+      margin: 0 1%;
+    }
   }
 
   nav.opened > ul > li {
@@ -1526,56 +1550,57 @@ main.main-page {
     width: 100%;
     margin: 0;
     text-align: center;
+
+    > a {
+      display: inline-block;
+      width: 35%;
+      @include marginPadding(0, $eightPixel);
+    }
   }
 
-  nav.opened > ul > li > a {
-    display: inline-block;
-    width: 35%;
-    @include marginPadding(0, $eightPixel);
+  #main-header {
+    > div {
+      flex-direction: column;
+
+      > a {
+        order: -1;
+
+        img.header-full {
+          width: 12.5em;
+          @include paddingTB(3.750em, $tenPixel);
+        }
+      }
+    }
+
+    .header-contact {
+      padding-bottom: $eightPixel;
+      flex-basis: auto;
+    }
   }
 
-  #main-header > div {
-    flex-direction: column;
-  }
-
-  #main-header .header-contact {
-    flex-basis: auto;
-  }
-
-  #main-header > div > a img.header-full {
-    width: 12.5em;
-    @include paddingTB(3.750em, $tenPixel);
-  }
-
-  #main-header .header-contact {
-    padding-bottom: $eightPixel;
-  }
-
-  #main-header > div > a {
-    order: -1;
-  }
-
-  main {
+  main#main-content {
     @include marginCenter;
   }
 
-  #senior-couple {
-    margin-top: $fortyPixel;
+  main.main-page {
+    #senior-couple {
+      margin-top: $fortyPixel;
+    }
+
+    section.doctor-intro {
+      background-size: 40% 85%;
+
+      p {
+        width: 65%;
+      }
+    }
+
+    section.full-arch {
+      background-size: 40% 75%;
+    }
   }
 
-  main.main-page section.doctor-intro {
-    background-size: 40% 85%;
-  }
-
-  main.main-page section.doctor-intro p {
-    width: 65%;
-  }
-
-  main.main-page section.full-arch {
-    background-size: 40% 75%;
-  }
-
-  #overlayContent img {
+  #gallery-page #overlayContent img {
     width: 31.25em;
   }
 }
@@ -1587,99 +1612,110 @@ main.main-page {
     padding-bottom: $thirtyPixel;
   }
 
-  main.main-page .badge-logo div:nth-child(3) {
+  main.main-page section.badge-logo div:nth-child(3) {
     padding-bottom: $thirtyFivePixel;
   }
 
   main.main-page section.full-arch {
     background-image: none;
+
+    .text-left h3 {
+      text-align: center;
+    }
+
+    p {
+      width: 90%;
+      text-align: center;
+      @include center;
+    }
+
+    .text-center h3 {
+      width: 85%;
+    }
   }
 
-  main.main-page section.full-arch .text-left h3 {
-    text-align: center;
+  #about-page {
+    h2 {
+      margin-bottom: $tenPixel;
+    }
+
+    .profile-photo img {
+      width: 55%;
+    }
   }
 
-  main.main-page section.full-arch p {
-    width: 90%;
-    text-align: center;
-    @include center;
-  }
-
-  main.main-page section.full-arch .text-center h3 {
-    width: 85%;
-  }
-
-  #about-page h2 {
-    margin-bottom: $tenPixel;
-  }
-
-  #about-page .profile-photo img {
-    width: 55%;
-  }
-
-  #overlayContent img {
+  #gallery-page #overlayContent img {
     width: 25em;
   }
 
-  #contact-page .intro {
+  #main-content #contact-page p.intro {
     display: none;
   }
 }
 
 @media screen and (max-width: 750px) {
-  .carousel-caption {
-    top: 45%;
-  }
+  main.main-page {
+    .carousel-caption {
+      top: 45%;
+    }
 
-  #senior-couple .carousel-caption h2 {
-    font-size: $thirtyPixel;
-  }
+    #senior-couple .carousel-caption {
+      h2 {
+        font-size: $thirtyPixel;
+      }
 
-  #senior-couple .carousel-caption p {
-    font-size: 1em;
-  }
+      p {
+        font-size: 1em;
+      }
 
-  #senior-couple .carousel-caption h3 {
-    font-size: $twentyFivePixel;
-  }
+      h3 {
+        font-size: $twentyFivePixel;
+      }
+    }
 
-  main.main-page section:first-of-type,
-  main.main-page section.doctor-intro {
-    background-image: none;
-  }
+    section:first-of-type,
+    section.doctor-intro {
+      background-image: none;
+    }
 
-  main.main-page section:first-of-type .container {
-    width: 100%;
-    @include paddingLR(0, 0);
-  }
+    section:first-of-type .container {
+      width: 100%;
+      @include paddingLR(0, 0);
+    }
 
-  main.main-page section.doctor-intro .container {
-    padding-left: 8%;
-  }
+    section.doctor-intro .container {
+      padding-left: 8%;
+    }
 
-  main.main-page section.doctor-intro p {
-    width: 85%;
+    section.doctor-intro p {
+      width: 85%;
+    }
   }
 }
 
 @media screen and (max-width: 650px) {
-  #senior-couple .carousel-caption {
+  main.main-page #senior-couple .carousel-caption {
     display: none;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .carousel-caption {
-    top: 40%;
-  }
-  .carousel-caption h2 {
-    font-size: $thirtyPixel;
-  }
-  .carousel-caption p {
-    font-size: 1em;
-  }
-  .carousel-caption h3 {
-    font-size: $twentyFivePixel;
+  main.main-page {
+    .carousel-caption {
+      top: 40%;
+
+      h2 {
+        font-size: $thirtyPixel;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      h3 {
+        font-size: $twentyFivePixel;
+      }
+    }
   }
 }
 
@@ -1708,19 +1744,17 @@ main.main-page {
 }
 
 @media screen and (max-width: 480px) {
-  .carousel-caption {
+  main.main-page .carousel-caption {
     display: none;
   }
 }
 
 @media screen and (max-width: 400px) {
-
-  #footer-header img {
+  footer #footer-header img {
     max-width: 12.5em;
   }
 
   footer .hours label {
     width: $eightyPixel;
   }
-
 }
