@@ -3,8 +3,9 @@
 @import "extend";
 
 html {
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -57,8 +58,8 @@ a {
   }
 
   &:hover {
-    transition: color .3s, background-color .3s, box-shadow .3s;
     -webkit-transition: color .3s, background-color .3s, box-shadow .3s;
+    transition: color .3s, background-color .3s, box-shadow .3s;
   }
 
   &:visited,
@@ -105,8 +106,8 @@ html input[disabled] {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
   padding: 0;
+  border: 0;
 }
 
 .btn {
@@ -129,28 +130,28 @@ input::-moz-focus-inner {
 
 input {
   line-height: normal;
-}
 
-input[type=checkbox],
-input[type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-}
+  &[type=checkbox],
+  &[type=radio] {
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  height: auto;
-}
+  &[type=number]::-webkit-inner-spin-button,
+  &[type=number]::-webkit-outer-spin-button {
+    height: auto;
+  }
 
-input[type=search] {
-  -webkit-appearance: textfield;
-  box-sizing: content-box;
-}
+  &[type=search] {
+    box-sizing: content-box;
+    -webkit-appearance: textfield;
+  }
 
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  &[type=search]::-webkit-search-cancel-button,
+  &[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+} // end of input
 
 input:-webkit-autofill,
 textarea:-webkit-autofill,
@@ -197,192 +198,192 @@ header {
   top: 0;
   background-color: $white;
   text-align: center;
+  border-bottom: 1px solid $mainColorBase;
+  box-shadow: 0 1px 2px $mainColorBase;
   -webkit-transition: margin 0.3s;
   -o-transition: margin 0.3s;
   transition: margin 0.3s;
-  border-bottom: 1px solid $mainColorBase;
-  box-shadow: 0 1px 2px $mainColorBase;
 
   &.slideDown {
     z-index: 1000;
   }
-}
+} // end of header
 
 /* Menu */
 nav {
+  background-color: $mainColorBase;
   @include font($fifteenPixel, 400);
   line-height: 1;
   vertical-align: middle;
   text-align: center;
   @include marginCenter;
   @include paddingTB($tenPixel, $tenPixel);
-  background-color: $mainColorBase;
-}
 
-nav #responsive-nav { /* Small Device Menu */
-  display: none;
-  height: 2.813em;
-  width: 100%;
-}
+  #responsive-nav { /* Small Device Menu */
+    display: none;
+    height: 2.813em;
+    width: 100%;
 
-nav #responsive-nav .flex {
-  display: flex;
-  justify-content: space-around;
-}
+    .flex {
+      display: flex;
+      justify-content: space-around;
+    }
 
-nav #responsive-nav a,
-nav #responsive-nav address {
-  position: relative;
-  float: left;
-  text-align: center;
-}
+    a,
+    address {
+      position: relative;
+      float: left;
+      text-align: center;
+    }
 
-nav #responsive-nav button {
-  background-color: $mainColorBase;
-  border: 1px solid $white;
-  border-radius: 3px;
-}
+    button {
+      background-color: $mainColorBase;
+      border: 1px solid $white;
+      border-radius: 3px;
+    }
 
-nav #responsive-nav span {
-  color: $white;
-  @include font($thirtyPixel, 400);
-  padding: 0.188em;
-}
+    span {
+      color: $white;
+      @include font($thirtyPixel, 400);
+      padding: 0.188em;
+    }
 
-nav #responsive-nav address span {
-  font-size: $twentyFivePixel;
-  padding-top: 0.375em;
-}
+    address span {
+      font-size: $twentyFivePixel;
+      padding-top: 0.375em;
+    }
+  } // end of nav #responsive-nav
 
-nav ul {
-  display: block;
-  @include marginPadding(0, 0);
-  text-align: center;
-  vertical-align: top;
-  list-style: none;
-}
+  ul {
+    list-style: none;
+    display: block;
+    @include marginPadding(0, 0);
+    text-align: center;
+    vertical-align: top;
 
-nav ul li {
-  display: inline-block;
-  position: relative;
-}
+    li {
+      display: inline-block;
+      position: relative;
 
-nav ul li:hover a {
-  @include color($darkerColorBase, $white);
-  text-decoration: none;
-}
+      &:before {
+        content: none;
+      }
 
-nav li:before {
-  content: none;
-}
+      a {
+        display: block;
+        color: $white;
+        font-size: $eighteenPixel;
+        padding: 0.375em $fifteenPixel;
+        transition: background .3s, color .3s;
+        text-transform: uppercase;
+      }
 
-nav li a {
-  display: block;
-  color: $white;
-  font-size: $eighteenPixel;
-  padding: 0.375em $fifteenPixel;
-  transition: background .3s, color .3s;
-  text-transform: uppercase;
-}
+      &:hover a {
+        text-decoration: none;
+        @include color($darkerColorBase, $white);
+      }
+    }
+  } // end of nav ul
+} // end of nav
 
 #main-header {
   padding: $fivePixel 0;
   -webkit-transition: min-height 0.3s;
   -o-transition: min-height 0.3s;
   transition: min-height 0.3s;
-}
 
-#main-header > div {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: start;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 1350px;
-  @include marginCenter;
-}
+  > div {
+    max-width: 1350px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    @include marginCenter;
 
-#main-header .header-contact {
-  text-align: center;
-  width: 100%;
-  flex-basis: 400px;
-  line-height: 1;
-}
+    > a { /* Website logo */
+      max-width: 440px;
+      z-index: 100;
+      -webkit-transition: max-width .3s;
+      -o-transition: max-width .3s;
+      transition: max-width .3s;
 
-#main-header .header-contact > a {
-  color: $mainColorBase;
-  font-family: Lato, sans-serif;
-  @include font(2.0625em, 400);
-}
+      img.header-full {
+        width: 100%;
+        -webkit-transition: width .3s;
+        -o-transition: width .3s;
+        transition: width .3s;
+      }
+    }
+  } // end of #main-header > div
 
-#main-header .header-contact .email {
-  font-size: $eighteenPixel;
-  color: $mainColorBase;
-}
+  .header-contact {
+    width: 100%;
+    flex-basis: 400px;
+    text-align: center;
+    line-height: 1;
 
-#main-header .header-contact address {
-  line-height: 1.2;
-  margin-bottom: $fifteenPixel;
-}
+    > a {
+      color: $mainColorBase;
+      font-family: Lato, sans-serif;
+      @include font(2.0625em, 400);
 
-#main-header .header-contact address a {
-  display: inline-block;
-  vertical-align: middle;
-  color: #3d3a35;
-  font-family: Lato, sans-serif;
-  @include font(1em, 400);
-  -webkit-transition: color .3s;
-  -o-transition: color .3s;
-  transition: color .3s;
-}
+      &:hover {
+        @extend %headerLinkHover;
+      }
 
-#main-header .header-contact > a:hover {
-  @extend %headerLinkHover;
-}
-#main-header .header-contact address a:hover {
-  @extend %headerLinkHover;
-}
+      &.btn:hover {
+        color: $white;
+      }
+    }
 
-#main-header .header-contact > a.btn:hover {
-  color: $white;
-}
+    .email {
+      color: $mainColorBase;
+      font-size: $eighteenPixel;
+    }
 
-#main-header .header-contact .btn {
-  display: block;
-  max-width: 250px;
-  width: 100%;
-  color: $white;
-  @include font($twelvePixel, 400);
-  @include marginPadding(0 auto, $twelvePixel);
-  border-radius: 5px;
-  line-height: 1;
-}
+    address {
+      line-height: 1.2;
+      margin-bottom: $fifteenPixel;
 
-#main-header .header-contact .btn strong {
-  display: block;
-  @include font($eighteenPixel, 900);
-  padding-bottom: $eightPixel;
-}
+      a {
+        display: inline-block;
+        color: #3d3a35;
+        font-family: Lato, sans-serif;
+        @include font(1em, 400);
+        vertical-align: middle;
+        -webkit-transition: color .3s;
+        -o-transition: color .3s;
+        transition: color .3s;
+      }
 
-/* Website logo */
-#main-header > div > a {
-  max-width: 440px;
-  z-index: 100;
-  -webkit-transition: max-width .3s;
-  -o-transition: max-width .3s;
-  transition: max-width .3s;
-}
+      a:hover {
+        @extend %headerLinkHover;
+      }
+    }
 
-#main-header > div > a img.header-full {
-  width: 100%;
-  -webkit-transition: width .3s;
-  -o-transition: width .3s;
-  transition: width .3s;
-}
+    .btn {
+      display: block;
+      max-width: 250px;
+      width: 100%;
+      color: $white;
+      @include font($twelvePixel, 400);
+      @include marginPadding(0 auto, $twelvePixel);
+      border-radius: 5px;
+      line-height: 1;
+
+      strong {
+        display: block;
+        @include font($eighteenPixel, 900);
+        padding-bottom: $eightPixel;
+      }
+    }
+  } // end of #main-header .header-contact
+} // end of #main-header
 
 footer {
   background-size: cover;
@@ -391,218 +392,89 @@ footer {
   align-items: center;
   margin-top: 0;
   padding-top: $fiftyPixel;
-}
 
-footer #footer-header .col-md-4 {
-  margin: $fiftyPixel 0;
-}
+  #footer-header {
+    @extend %mobileSidePadding;
 
-footer h2 {
-  @extend %footerHeader;
-}
+    .col-md-4 {
+      margin: $fiftyPixel 0;
+    }
+  }
 
-footer .well-title h3 {
-  @extend %footerHeader;
-}
+  h2 {
+    @extend %footerHeader;
+  }
 
-footer h3 {
-  @include font($eighteenPixel, 700);
-  letter-spacing: 1px;
-  margin: 0 auto $fifteenPixel;
-}
+  .well-title h3 {
+    @extend %footerHeader;
+  }
 
-/* Appointment Request */
-footer #contact-form {
-  margin-bottom: $thirtyPixel;
-}
+  h3 {
+    @include font($eighteenPixel, 700);
+    letter-spacing: 1px;
+    margin: 0 auto $fifteenPixel;
+  }
 
-footer .well-title {
-  margin: $thirtyPixel auto $twentyPixel;
-}
+  #appointment-form {
+    @extend %pagesSidePadding;
+  }
 
-footer .g-recaptcha {
-  display: inline-block;
-}
+  .well-title {
+    margin: $thirtyPixel auto $twentyPixel;
+  }
 
-footer .btn-alt {
-  display: block;
-  box-shadow: none;
-  border: none;
-  border-radius: 5px;
-  @include marginCenter($tenPixel);
-}
+  .g-recaptcha {
+    display: inline-block;
+  }
 
-/* Footer Instagram */
-footer .social-ig {
-  font-family: 'Pacifico', cursive;
-  font-size: $twentyFourPixel;
-  letter-spacing: 1px;
-}
+  .btn-alt {
+    display: block;
+    @include marginCenter($tenPixel);
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
 
-footer .fa-instagram {
-  font-size: $thirtyPixel;
-  color: $white;
-}
+  }
 
-/* Office Hours */
-footer .hours {
-  color: $white;
-}
+  .social-ig { /* Footer Instagram */
+    font-family: 'Pacifico', cursive;
+    font-size: $twentyFourPixel;
+    letter-spacing: 1px;
+  }
 
-footer .hours label {
-  display: inline-block;
-  width: 6.875em;
-  text-align: left;
-  font-weight: 600;
-}
+  .fa-instagram {
+    font-size: $thirtyPixel;
+    color: $white;
+  }
 
-.copyright {
-  position: relative;
-  @include font($fifteenPixel, 300);
-  @include marginCenter;
-  text-align: center;
-  padding-bottom: $tenPixel;
-}
+  .hours { /* Office Hours */
+    color: $white;
 
-#author {
-  font-size: $twelvePixel;
-  margin-top: -$eightPixel;
-}
+    label {
+      display: inline-block;
+      width: 6.875em;
+      text-align: left;
+      font-weight: 600;
+    }
+  }
 
-#author a {
-  color: $white;
-}
+  .copyright {
+    position: relative;
+    @include font($fifteenPixel, 300);
+    @include marginCenter;
+    padding-bottom: $tenPixel;
+    text-align: center;
+  }
 
-#about-page {
-  @extend %pagesMargin;
-}
+  #author {
+    font-size: $twelvePixel;
+    margin-top: -$eightPixel;
 
-#procedure-page {
-  @extend %pagesMargin;
-}
-
-#patient-page {
-  @extend %pagesMargin;
-}
-
-#referral-page {
-  @extend %pagesMargin;
-}
-
-#gallery-page {
-  @extend %pagesMargin;
-}
-
-#contact-page {
-  @extend %pagesMargin;
-}
-
-main.main-page section {
-  @extend %mobileSidePadding;
-}
-
-#about-page {
-  @extend %mobileSidePadding;
-}
-
-footer #footer-header {
-  @extend %mobileSidePadding;
-}
-
-#about-page h2 {
-  @extend %pagesSidePadding;
-}
-
-#procedure-page {
-  @extend %pagesSidePadding;
-}
-
-#patient-page {
-  @extend %pagesSidePadding;
-}
-
-#referral-page {
-  @extend %pagesSidePadding;
-}
-
-#gallery-page {
-  @extend %pagesSidePadding;
-}
-
-#contact-page {
-  @extend %pagesSidePadding;
-}
-
-footer #appointment-form {
-  @extend %pagesSidePadding;
-}
-
-
-
-main.main-page button a:hover,
-main.main-page button a:visited,
-main.main-page button a:active,
-main.main-page .promote-procedure a:hover,
-main.main-page .promote-procedure a:visited,
-main.main-page .promote-procedure a:active,
-main.main-page .promote-procedure a:focus,
-#procedure-page h3 a:visited,
-#procedure-page h3 a:active,
-#procedure-page h3 a:focus,
-#procedure-page button a:hover,
-#procedure-page button a:visited,
-#procedure-page button a:active,
-#procedure-page button a:focus,
-#patient-page a:hover,
-#patient-page a:visited,
-#patient-page a:active,
-#patient-page a:focus,
-#referral-page a:hover,
-#referral-page a:visited,
-#referral-page a:active,
-#referral-page a:focus,
-#contact-page section a:visited,
-#contact-page section a:active,
-#contact-page section a:focus {
-  text-decoration: none;
-}
-
-main.main-page section.blue-color {
-  @include paddingLR(0, 0);
-}
-
-main.main-page section.blue-color .container {
-  @include paddingLR($mobileSidePadding, $mobileSidePadding);
-}
-
-#procedure-page h2 {
-  @extend %pagesH2;
-}
-
-#patient-page h2 {
-  @extend %pagesH2;
-}
-
-#referral-page h2 {
-  @extend %pagesH2;
-}
-
-#gallery-page h2 {
-  @extend %pagesH2;
-}
-
-#contact-page h2 {
-  @extend %pagesH2;
-}
-
-#patient-page h3 {
-  color: $softColorBase;
-  margin: $thirtyPixel auto $fifteenPixel;
-}
-
-#patient-page h3:first-of-type {
-  margin-top: 0;
-}
+    a {
+      color: $white;
+    }
+  }
+} // end of footer
 
 #main-content p.intro {
   font-size: $twentyPixel;
@@ -615,685 +487,799 @@ main.main-page section.blue-color .container {
   margin-bottom: -$twentyFivePixel;
 }
 
+/* Home Page */
+main.main-page {
+  #myCarousel {
+    margin-top: -$tenPixel;
+  }
 
-/* Main Page */
-#myCarousel {
-  margin-top: -$tenPixel;
-}
+  .carousel-indicators li {
+    background-color: $darkerColorBase;
+    border-color: $darkerColorBase;
+  }
 
-.carousel-indicators li {
-  border-color: $darkerColorBase;
-  background-color: $darkerColorBase;
-}
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+  }
 
-.carousel-inner img {
-  width: 100%;
-  height: auto;
-  margin: 0 !important;
-}
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    color: $white;
+    margin: 0;
+    text-align: center;
+    text-shadow: 2px 2px 2px $darkerColorBase;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: 0;
-  color: $white;
-  text-align: center;
-  text-shadow: 2px 2px 2px $darkerColorBase;
-}
+    h2 {
+      font-size: $fiftyPixel;
+    }
 
-#senior-couple .carousel-caption {
-  color: $darkerColorBase;
-  text-shadow: none;
-  top: 65%;
-}
+    p {
+      font-size: $thirtyPixel;
+      line-height:  $twentyPixel;
+      @include marginTB(-$tenPixel, $fivePixel);
+      padding: $fivePixel 0!important;
+      border-bottom: 2px solid $white;
+    }
 
-.carousel-caption h2 {
-  font-size: $fiftyPixel;
-}
+    h3 {
+      font-size: $fortyPixel;
+    }
+  }
 
-.carousel-caption p {
-  font-size: $thirtyPixel;
-  @include marginTB(-$tenPixel, $fivePixel);
-  padding: $fivePixel 0!important;
-  line-height:  $twentyPixel;
-  border-bottom: 2px solid $white;
-}
+  #senior-couple .carousel-caption {
+    top: 65%;
+    color: $darkerColorBase;
+    text-shadow: none;
 
-#senior-couple .carousel-caption p {
-  border-bottom: 2px solid $darkerColorBase;
-}
+    p {
+      border-bottom: 2px solid $darkerColorBase;
+    }
+  }
 
-.carousel-caption h3 {
-  font-size: $fortyPixel;
-}
+  .carousel-fade {
+    .carousel-inner {
+      .item {
+        opacity: 0.8;
+        -webkit-transition-property: opacity;
+        -o-transition-property: opacity;
+        transition-property: opacity;
+      }
 
-.carousel-fade .carousel-inner .item {
-  opacity: 0.8;
-  -webkit-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-}
+      .active {
+        opacity: 1;
+      }
 
-.carousel-fade .carousel-inner .active {
-  opacity: 1;
-}
+      .active.left,
+      .active.right {
+        left: 0;
+        opacity: 0.5;
+        z-index: 1;
+      }
 
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-  left: 0;
-  opacity: 0.5;
-  z-index: 1;
-}
+      .next.left,
+      .prev.right {
+        opacity: 1;
+      }
+    }
 
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-}
+    .carousel-control {
+      z-index: 2;
+    }
+  }
 
-.carousel-fade .carousel-control {
-  z-index: 2;
-}
+  section {
+    @include paddingTB($eightyPixel, $eightyPixel);
+    @extend %mobileSidePadding;
 
-main.main-page section {
-  @include paddingTB($eightyPixel, $eightyPixel);
-}
+    &:first-of-type {
+      background: $white url("http://drfortinoperiodontics.com/assets/img/drDanielFortino/Fortino4a.png") left bottom/auto no-repeat;
+      padding-bottom: 0;
 
-main.main-page section.blue-color {
-  width: 100%;
-  background-color: $whiteColorBase;
-}
+      .container {
+        width: 90%;
+        padding-left: 8%;
+        padding-bottom: $fiftyPixel;
+      }
+    }
 
-main.main-page section:first-of-type {
-  background: $white url("http://drfortinoperiodontics.com/assets/img/drDanielFortino/Fortino4a.png") left bottom/auto no-repeat;
-  padding-bottom: 0;
-}
+    h2 {
+      font-size: $thirtyFivePixel;
+      color: $mainColorBase;
+      padding-bottom: $tenPixel;
+    }
 
-main.main-page section:first-of-type .container {
-  width: 90%;
-  padding-left: 8%;
-  padding-bottom: $fiftyPixel;
-}
+    p {
+      @include font($twentyPixel, 400);
+      line-height: $thirtyPixel;
+      margin-bottom: $twentyPixel;
+    }
+  } // end of section
 
-main.main-page section:last-of-type {
-  padding-bottom: 0;
-}
+  section.blue-color {
+    width: 100%;
+    background-color: $whiteColorBase;
+    @include paddingLR(0, 0);
 
-main.main-page section.badge-logo {
-  background-color: $white;
-  @include paddingTB($fiftyPixel, $fiftyPixel);
-  @include center;
-}
+    .container {
+      @include paddingLR($mobileSidePadding, $mobileSidePadding);
+    }
+  }
 
-main.main-page section h2 {
-  font-size: $thirtyFivePixel;
-  color: $mainColorBase;
-  padding-bottom: $tenPixel;
-}
+  section.doctor-intro {
+    background: $whiteColorBase url("http://drfortinoperiodontics.com/assets/img/drDanielFortino/Fortino2.png") 90% bottom/contain no-repeat;
+    height: 500px;
+    @include paddingTB($eightyPixel, $eightyPixel);
 
-main.main-page section p {
-  @include font($twentyPixel, 400);
-  line-height: $thirtyPixel;
-  margin-bottom: $twentyPixel;
-}
+    p {
+      width: 85%;
+    }
+  }
 
-main.main-page button {
-  @extend %blueButton;
-}
+  section.badge-logo {
+    background-color: $white;
+    @include paddingTB($fiftyPixel, $fiftyPixel);
+    @include center;
 
-#procedure-page button {
-  @extend %blueButton;
-}
+    img {
+      display: block;
+      height: $eightyPixel;
+      @include paddingLR($twelvePixel, $twelvePixel);
+      @include center;
+    }
+  }
 
-main.main-page button a {
-  @extend %blueButtonLink;
-}
-#procedure-page button a{
-  @extend %blueButtonLink;
-}
+  section.full-arch {
+    position: relative;
+    height: auto;
+    background: $whiteColorBase url("http://drfortinoperiodontics.com/assets/img/front-page/happy-couple.png") right bottom/contain no-repeat;
 
-main.main-page button:hover,
-main.main-page button:visited,
-main.main-page button:active {
-  text-decoration: none;
-  background-color: $darkerColorBase;
-}
+    h3 {
+      @include font($twentyFivePixel, 500);
+      color: $mainColorBase;
+      line-height: $twentyPixel;
+      margin-bottom: $twentyFivePixel;
+    }
 
-main.main-page section.doctor-intro {
-  background: $whiteColorBase url("http://drfortinoperiodontics.com/assets/img/drDanielFortino/Fortino2.png") 90% bottom/contain no-repeat;
-  height: 500px;
-  @include paddingTB($eightyPixel, $eightyPixel);
-}
+    .text-left h3 {
+      font-size: $thirtyPixel;
+      line-height: $twentyFivePixel;
+    }
 
-main.main-page section.doctor-intro p {
-  width: 85%;
-}
+    .text-center h3 {
+      width: 65%;
+      @include center;
+    }
 
-main.main-page .badge-logo img {
-  display: block;
-  height: $eightyPixel;
-  @include paddingLR($twelvePixel, $twelvePixel);
-  @include center;
-}
+    p {
+      width: 73%;
+      font-size: $twentyFivePixel;
+      line-height: $twentyFivePixel;
+      margin-bottom: $twentyPixel;
+    }
 
-main.main-page section.full-arch {
-  position: relative;
-  height: auto;
-  background: $whiteColorBase url("http://drfortinoperiodontics.com/assets/img/front-page/happy-couple.png") right bottom/contain no-repeat;
-}
+    .row {
+      @include marginTB($twentyPixel, 0);
+    }
+  }
 
-main.main-page section.full-arch h3 {
-  @include font($twentyFivePixel, 500);
-  color: $mainColorBase;
-  line-height: $twentyPixel;
-  margin-bottom: $twentyFivePixel;
-}
+  section.promote-procedure {
+    background-color: $white;
+    padding-bottom: 0;
 
-main.main-page section.full-arch .text-left h3 {
-  font-size: $thirtyPixel;
-  line-height: $twentyFivePixel;
-}
+   > div {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 $eightPixel $thirtyPixel;
+    }
 
-main.main-page section.full-arch .text-center h3 {
-  width: 65%;
-  @include center;
-}
+    img {
+      width: 14.063em;
+      height: 14.063em;
+    }
 
-main.main-page section.full-arch p {
-  width: 73%;
-  font-size: $twentyFivePixel;
-  line-height: $twentyFivePixel;
-  margin-bottom: $twentyPixel;
-}
+    h3 {
+      color: $mainColorBase;
+      @include font($twentyFourPixel, 600);
+      line-height: $twentyPixel;
+      margin-top: $tenPixel;
+    }
 
-main.main-page section.full-arch .row {
-  @include marginTB($twentyPixel, 0);
-}
+    a {
+     &:hover,
+     &:visited,
+     &:active,
+     &:focus {
+        text-decoration: none;
+      }
+    }
+  } // end of .promote-procedure
 
-main.main-page section.promote-procedure {
-  background-color: $white;
+  button {
+    @extend %blueButton;
+
+    &:hover,
+    &:visited,
+    &:active {
+      background-color: $darkerColorBase;
+      text-decoration: none;
+    }
+
+    a {
+      @extend %blueButtonLink;
+
+      &:hover,
+      &:visited,
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .hvrbox,
+  .hvrbox * {
+    box-sizing: border-box;
+  }
+
+  .hvrbox {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+    }
+
+    .hvrbox-layer_bottom {
+      display: block;
+    }
+
+    .hvrbox-layer_top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      @include color(rgba(0, 0, 0, 0.6), $white);
+      padding: $fifteenPixel;
+      opacity: 0;
+      -webkit-transition: all 0.4s ease-in-out 0s;
+      -o-transition: all 0.4s ease-in-out 0s;
+      transition: all 0.4s ease-in-out 0s;
+    }
+
+    &:hover .hvrbox-layer_top,
+    &.active .hvrbox-layer_top {
+      opacity: 1;
+    }
+
+    .hvrbox-text {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      font-size: 1em;
+      line-height: $twentyPixel;
+      text-align: left;
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .hvrbox-text_mobile {
+      display: none;
+      font-size: $fifteenPixel;
+      margin-top: $fivePixel;
+      padding-top: $twoPixel;
+      border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
+      border-top: 1px solid rgba(179, 179, 179, 0.7);
+    }
+
+    &.active .hvrbox-text_mobile {
+      display: block;
+    }
+  } // end of .hvrbox
+} // end of main.main-page
+
+#about-page {
+  @extend %pagesMargin;
+  @extend %mobileSidePadding;
+
+  h2 {
+    color: $mainColorBase;
+    @include font($twentyFourPixel, 600);
+    line-height: $twentyPixel;
+    margin-bottom: $fiftyPixel;
+    @extend %pagesSidePadding;
+  }
+
+  .profile-photo {
+    @include paddingLR($thirtyPixel, $thirtyPixel);
+
+    img {
+      @include marginTB($thirtyPixel, $twentyFivePixel);
+      border-radius: 5%;
+      box-shadow: 0 0 8px 2px #e5e5e5;
+    }
+  }
+
+  p {
+    @include font($eighteenPixel, 400);
+    line-height: $twentyFivePixel;
+    color: #303030;
+    margin-bottom: $thirtyPixel;
+  }
+} // end of #about-page
+
+#procedure-page {
+  @extend %pagesMargin;
+  @extend %pagesSidePadding;
+
+  h2 {
+    @extend %pagesH2;
+  }
+
+  h3.accordion {
+    width: 100%;
+    @include color($lighterColorBase, $white);
+    font-size: $twentyFourPixel;
+    text-align: left;
+    padding: $eighteenPixel;
+    border: 1px solid $mainColorBase;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .active,
+  .accordion:hover {
+    background-color: $mainColorBase;
+  }
+
+  .accordion.more:after {
+    content: '\002B';
+    float: right;
+    color: $white;
+    font-weight: bold;
+    margin-left: $tenPixel;
+  }
+
+  .panel {
+    display: none;
+    background-color: white;
+    padding: $eighteenPixel;
+    margin-bottom: $twentyPixel;
+    overflow: hidden;
+
+    p {
+      font-size: $eighteenPixel;
+    }
+
+    h3 {
+      font-size: $twentyPixel;
+    }
+  }
+
+  p,
+  li {
+    font-weight: 400;
+    line-height: $thirtyPixel;
+    margin-bottom: $twentyPixel;
+  }
+
+  ul {
+    margin-top: $thirtyPixel;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  h3 a {
+    &:visited,
+    &:active,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  button {
+    @extend %blueButton;
+
+    a{
+      @extend %blueButtonLink;
+
+      &:hover,
+      &:visited,
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  video {
+    display:block;
+    width: 100%;
+    height: 100%;
+
+    &#perio-video {
+      width: 50%;
+      height: 50%;
+      @include center;
+    }
+  }
+
+  #wisdom-teeth h3 { /* Wisdom Teeth */
+    color: $softColorBase;
+    margin: $thirtyPixel auto $fifteenPixel;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  .well {
+    background-color: $whiteColorBase;
+    width: 90%;
+    @include center;
+
+    img {
+      border: 2px solid #70b1e3;
+    }
+  }
+} // end of #procedure-page
+
+#patient-page {
+  @extend %pagesMargin;
+  @extend %pagesSidePadding;
+
+  h2 {
+    @extend %pagesH2;
+  }
+
+  h3 {
+    color: $softColorBase;
+    margin: $thirtyPixel auto $fifteenPixel;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  label {
+    @extend %scheduleLabel;
+  }
+
+  a { /* Download Forms */
+    cursor: pointer;
+
+    &:hover {
+      @extend %downloadFormLink;
+    }
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus{
+      text-decoration: none;
+    }
+  }
+
+} // end of #patient-page
+
+#referral-page {
+  @extend %pagesMargin;
+  @extend %pagesSidePadding;
+
+  h2 {
+    @extend %pagesH2;
+  }
+
+  section {
+    font-size: $twentyPixel;
+    margin-bottom: $thirtyPixel;
+    border-bottom: 1px solid lightgray;
+  }
+
+  a { /* Download Forms */
+    cursor: pointer;
+
+    &:hover {
+      @extend %downloadFormLink;
+    }
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus{
+      text-decoration: none;
+    }
+  }
+
+  div.referral-form-container {
+    max-width: 600px;
+  }
+
+  form#referral-form {
+    label {
+      display: block;
+      color: $sharpColorBase;
+      @include font(1em, normal);
+      font-style: normal;
+      line-height: $fourteenPixel;
+      padding: $eightPixel 0 $twoPixel 0;
+
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      @include color(#e6ecf4, $sharpColorBase);
+      @include font($eighteenPixel, normal);
+      font-style: normal;
+      line-height: 1em;
+      padding: $tenPixel 3%;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 2px 3px 0 #D6D6D6;
+      outline: none;
+    }
+
+    select {
+      padding: $fivePixel;
+      border-color: $sharpColorBase;
+    }
+
+    .fileUpload {
+      position: relative;
+      overflow: hidden;
+      margin: $tenPixel;
+
+      label {
+        display: inline-block;
+        @include color(#e6ecf4, $sharpColorBase);
+        padding: $tenPixel;
+        margin-right: $eightPixel;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+
+      input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: $twentyPixel;
+        @include marginPadding(0, 0);
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }
+    }
+
+    input#uploadFile {
+      display: none;
+      background: none;
+      box-shadow: none;
+      margin-top: $tenPixel;
+    }
+
+    #submit_button {
+      display: block;
+      float: left;
+      @include color($sharpColorBase, $white);
+      @include font($fourteenPixel, normal);
+      font-style: normal;
+      line-height: $fourteenPixel;
+      padding: $tenPixel 5%;
+      border: none;
+      border-radius: 10px;
+    }
+  } // end of form#referral-form
+} // end of #referral-page
+
+#gallery-page {
+  @extend %pagesMargin;
+  @extend %pagesSidePadding;
+
+  h2 {
+    @extend %pagesH2;
+  }
+
+  section {
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    h3 {
+      color: $softColorBase;
+      font-weight: 800;
+      margin: $thirtyPixel auto $tenPixel;
+    }
+
+    label {
+      color: $softColorBase;
+      font-size: $eighteenPixel;
+    }
+
+    img {
+      margin-bottom: $thirtyPixel;
+      border: 2px solid $mainColorBase;
+      cursor: pointer;
+
+      &:hover {
+        border: 4px solid $mainColorBase;
+      }
+
+      &.no-zoom {
+        pointer-events: none;
+      }
+    }
+  }
+
+  #overlay { /* Image Zoom */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+  }
+
+  #overlayContent {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 30%;
+    left: 0;
+    text-align: center;
+    overflow: hidden;
+    z-index: 2999;
+
+    img {
+      width: 37.5em;
+    }
+  }
+
+  #imgBig {
+    border: 5px solid #01216C;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+} // end of #gallery-page
+
+#contact-page {
+  @extend %pagesMargin;
+  @extend %pagesSidePadding;
+
+  h2 {
+    @extend %pagesH2;
+  }
+
+  .row:nth-of-type(2){
+    padding-bottom: 1em;
+  }
+
+  .profile-photo img {
+    border: 2px solid $mainColorBase;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 1px $softColorBase;
+  }
+
+  .fa-instagram {
+    font-size: $thirtyPixel;
+  }
+
+  form {
+    padding-bottom: $thirtyPixel;
+
+    .form-control {
+      font-size: 1em;
+      line-height: $fortyPixel;
+      padding: $fifteenPixel;
+      border: 1px solid $mainColorBase;
+      border-radius: 0;
+    }
+
+    input,
+    textarea,
+    .g-recaptcha iframe {
+      box-shadow: 0 0 2px 1px $softColorBase;
+    }
+
+    textarea {
+      margin-bottom: $fifteenPixel;
+    }
+
+    .g-recaptcha iframe {
+      padding-top: 0;
+      border: 1px solid $mainColorBase;
+      border-radius: 3px;
+    }
+
+    .btn.pull-left {
+      margin-top: $thirtyPixel;
+    }
+  } // end of form
+
+  section {
+    margin-bottom: $twentyPixel;
+
+    &.contact-info p {
+      line-height: $twentyPixel;
+    }
+
+    a {
+      font-size: $twentyPixel;
+
+      &:visited,
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $twentyFourPixel;
+    color: $mainColorBase;
+    margin-bottom: $eightPixel;
+  }
+
+  label {
+    @extend %scheduleLabel;
+  }
+
+  .hours span {
+    visibility: hidden;
+  }
+
+  iframe {
+    width: 100%;
+    padding-top: $twentyPixel;
+  }
+} // end of #contact-page
+
+/* Submitted Form */
+.submitted p {
+  font-size: $twentyPixel;
+  padding-bottom: $fortyPixel;
+
+  &:first-of-type {
+    color: $mainColorBase;
+    @include font($thirtyPixel, 600);
+    line-height: $twentyPixel;
+    margin-top: $fiftyPixel;
+    padding-bottom: $twentyPixel;
+  }
 }
 
 @media (max-width: 1299px) and (min-width: 1100px) {
   main.main-page section.promote-procedure > div {
     width: 18%;
   }
-}
-
-main.main-page section.promote-procedure > div {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 $eightPixel $thirtyPixel;
-}
-
-main.main-page section.promote-procedure img {
-  width: 14.063em;
-  height: 14.063em;
-}
-
-main.main-page section.promote-procedure h3 {
-  color: $mainColorBase;
-  @include font($twentyFourPixel, 600);
-  line-height: $twentyPixel;
-  margin-top: $tenPixel;
-}
-
-.hvrbox,
-.hvrbox * {
-  box-sizing: border-box;
-}
-.hvrbox {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  max-width: 100%;
-  height: auto;
-}
-.hvrbox img {
-  max-width: 100%;
-}
-.hvrbox .hvrbox-layer_bottom {
-  display: block;
-}
-.hvrbox .hvrbox-layer_top {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  @include color(rgba(0, 0, 0, 0.6), $white);
-  padding: $fifteenPixel;
-  -webkit-transition: all 0.4s ease-in-out 0s;
-  -o-transition: all 0.4s ease-in-out 0s;
-  transition: all 0.4s ease-in-out 0s;
-}
-.hvrbox:hover .hvrbox-layer_top,
-.hvrbox.active .hvrbox-layer_top {
-  opacity: 1;
-}
-.hvrbox .hvrbox-text {
-  text-align: left;
-  font-size: 1em;
-  line-height: $twentyPixel;
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  -moz-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.hvrbox .hvrbox-text_mobile {
-  font-size: $fifteenPixel;
-  border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
-  border-top: 1px solid rgba(179, 179, 179, 0.7);
-  margin-top: $fivePixel;
-  padding-top: $twoPixel;
-  display: none;
-}
-.hvrbox.active .hvrbox-text_mobile {
-  display: block;
-}
-
-/* About Page */
-#about-page h2 {
-  color: $mainColorBase;
-  @include font($twentyFourPixel, 600);
-  line-height: $twentyPixel;
-  margin-bottom: $fiftyPixel;
-}
-
-#about-page .profile-photo {
-  @include paddingLR($thirtyPixel, $thirtyPixel);
-}
-
-#about-page .profile-photo img {
-  @include marginTB($thirtyPixel, $twentyFivePixel);
-  border-radius: 5%;
-  box-shadow: 0 0 8px 2px #e5e5e5;
-}
-
-#about-page p {
-  @include font($eighteenPixel, 400);
-  line-height: $twentyFivePixel;
-  color: #303030;
-  margin-bottom: $thirtyPixel;
-}
-
-/* Procedure Page */
-#procedure-page h3.accordion {
-  width: 100%;
-  font-size: $twentyFourPixel;
-  @include color($lighterColorBase, $white);
-  border: 1px solid $mainColorBase;
-  padding: $eighteenPixel;
-  text-align: left;
-  outline: none;
-  overflow: hidden;
-  cursor: pointer;
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-
-#procedure-page .active,
-#procedure-page .accordion:hover {
-  background-color: $mainColorBase;
-}
-
-#procedure-page .accordion.more:after {
-  content: '\002B';
-  color: $white;
-  font-weight: bold;
-  float: right;
-  margin-left: $tenPixel;
-}
-
-#procedure-page .panel {
-  display: none;
-  padding: $eighteenPixel;
-  background-color: white;
-  overflow: hidden;
-  margin-bottom: $twentyPixel;
-}
-
-#procedure-page .panel p {
-  font-size: $eighteenPixel;
-}
-
-#procedure-page .panel h3 {
-  font-size: $twentyPixel;
-}
-
-#procedure-page p,
-#procedure-page li {
-  font-weight: 400;
-  line-height: $thirtyPixel;
-  margin-bottom: $twentyPixel;
-}
-
-#procedure-page ul {
-  margin-top: $thirtyPixel;
-}
-
-#procedure-page ul li {
-  list-style-type: disc;
-
-}
-
-video {
-  display:block;
-  width: 100%;
-  height: 100%;
-}
-
-video#perio-video {
-  width: 50%;
-  height: 50%;
-  @include center;
-}
-
-/* Wisdom Teeth */
-#wisdom-teeth h3 {
-  color: $softColorBase;
-  margin: $thirtyPixel auto $fifteenPixel;
-}
-
-#wisdom-teeth h3:first-of-type {
-  margin-top: 0;
-}
-
-#procedure-page .well {
-  background-color: $whiteColorBase;
-  width: 90%;
-  @include center;
-}
-
-#procedure-page .well img {
-  border: 2px solid #70b1e3;
-}
-
-#patient-page a { /* Download Forms */
-  cursor: pointer;
-}
-
-#referral-page a { /* Download Forms */
-  cursor: pointer;
-}
-
-#patient-page a:hover {
-  @extend %downloadFormLink;
-}
-
-#referral-page a:hover {
-  @extend %downloadFormLink;
-}
-
-/* Referral Page */
-#referral-page section {
-  font-size: $twentyPixel;
-  margin-bottom: $thirtyPixel;
-  border-bottom: 1px solid lightgray;
-}
-
-.referral-form-container {
-  max-width: 600px;
-}
-
-form#referral-form label {
-  display: block;
-  color: $sharpColorBase;
-  @include font(1em, normal);
-  font-style: normal;
-  line-height: $fourteenPixel;
-  padding: $eightPixel 0 $twoPixel 0;
-
-}
-
-form#referral-form input,
-form#referral-form textarea {
-  display: block;
-  width: 100%;
-  @include color(#e6ecf4, $sharpColorBase);
-  @include font($eighteenPixel, normal);
-  font-style: normal;
-  line-height: 1em;
-  padding: $tenPixel 3%;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 2px 3px 0 #D6D6D6;
-  outline: none;
-}
-
-form#referral-form select {
-  padding: $fivePixel;
-  border-color: $sharpColorBase;
-}
-
-form#referral-form .fileUpload {
-  position: relative;
-  overflow: hidden;
-  margin: $tenPixel;
-}
-
-form#referral-form .fileUpload label {
-  display: inline-block;
-  @include color(#e6ecf4, $sharpColorBase);
-  border-radius: 2px;
-  padding: $tenPixel;
-  margin-right: $eightPixel;
-  cursor: pointer;
-}
-
-form#referral-form .fileUpload input.upload {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: $twentyPixel;
-  @include marginPadding(0, 0);
-  cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-
-form#referral-form input#uploadFile {
-  background: none;
-  box-shadow: none;
-  display: none;
-  margin-top: $tenPixel;
-}
-
-form#referral-form #submit_button {
-  display: block;
-  float: left;
-  @include color($sharpColorBase, $white);
-  @include font($fourteenPixel, normal);
-  border: none;
-  border-radius: 10px;
-  font-style: normal;
-  padding: $tenPixel 5%;
-  line-height: $fourteenPixel;
-}
-
-/* Gallery Page */
-#gallery-page section {
-  text-align: center;
-  border-bottom: 1px solid lightgray;
-}
-
-#gallery-page section:last-of-type {
-  border-bottom: none;
-}
-
-#gallery-page h3 {
-  color: $softColorBase;
-  font-weight: 800;
-  margin: $thirtyPixel auto $tenPixel;
-}
-
-#gallery-page section img {
-  border: 2px solid $mainColorBase;
-  margin-bottom: $thirtyPixel;
-  cursor: pointer;
-}
-
-#gallery-page section img:hover {
-  border: 4px solid $mainColorBase;
-}
-
-#gallery-page section img.no-zoom {
-  pointer-events: none;
-}
-
-#gallery-page label {
-  color: $softColorBase;
-  font-size: $eighteenPixel;
-}
-
-/* Image Zoom */
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: none;
-  z-index: 2000;
-}
-
-#overlayContent {
-  position: fixed;
-  width: 100%;
-  top: 30%;
-  left: 0;
-  text-align: center;
-  display: none;
-  overflow: hidden;
-  z-index: 2999;
-}
-
-#overlayContent img {
-  width: 37.5em;
-}
-
-#imgBig {
-  border: 5px solid #01216C;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Contact Page */
-#contact-page .row:nth-of-type(2){
-  padding-bottom: 1em;
-}
-
-#contact-page .profile-photo img {
-  border: 2px solid $mainColorBase;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 1px $softColorBase;
-}
-
-/* Instagram */
-#contact-page .social-ig {
-  font-family: 'Pacifico', cursive;
-  font-size: $twentyFourPixel;
-  color: $mainColorBase;
-  letter-spacing: 1px;
-  @include marginCenter($twentyPixel);
-  text-align: center;
-}
-
-#contact-page .fa-instagram {
-  font-size: $thirtyPixel;
-}
-
-#contact-page form {
-  padding-bottom: $thirtyPixel;
-}
-
-#contact-page form input,
-#contact-page form textarea,
-#contact-page .g-recaptcha iframe {
-  box-shadow: 0 0 2px 1px $softColorBase;
-}
-
-#contact-page .form-control {
-  font-size: 1em;
-  border: 1px solid $mainColorBase;
-  border-radius: 0;
-  line-height: $fortyPixel;
-  padding: $fifteenPixel;
-}
-
-#contact-page textarea {
-  margin-bottom: $fifteenPixel;
-}
-
-#contact-page .g-recaptcha iframe {
-  border: 1px solid $mainColorBase;
-  border-radius: 3px;
-  padding-top: 0;
-}
-
-#contact-page .btn.pull-left {
-  margin-top: $thirtyPixel;
-}
-
-#contact-page section {
-  margin-bottom: $twentyPixel;
-}
-
-#contact-page h3 {
-  font-size: $twentyFourPixel;
-  color: $mainColorBase;
-  margin-bottom: $eightPixel;
-}
-
-#patient-page label {
-  @extend %scheduleLabel;
-}
-#contact-page label {
-  @extend %scheduleLabel;
-}
-
-#contact-page section.contact-info p {
-  line-height: $twentyPixel;
-}
-
-#contact-page section a {
-  font-size: $twentyPixel;
-}
-
-#contact-page iframe {
-  width: 100%;
-  padding-top: $twentyPixel;
-}
-
-#contact-page .hours span {
-  visibility: hidden;
-}
-
-/* Submitted Form */
-.submitted p {
-  font-size: $twentyPixel;
-  padding-bottom: $fortyPixel;
-}
-
-.submitted p:first-of-type {
-  color: $mainColorBase;
-  @include font($thirtyPixel, 600);
-  line-height: $twentyPixel;
-  margin-top: $fiftyPixel;
-  padding-bottom: $twentyPixel;
 }
 
 @media screen and (min-width: 1200px) {
