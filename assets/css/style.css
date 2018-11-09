@@ -130,7 +130,7 @@ a {
   color: #0A4B7D;
 }
 
-a:active, a:hover {
+a:hover, a:active {
   outline: 0;
   color: #073457;
 }
@@ -760,16 +760,16 @@ main.main-page section.promote-procedure h3 {
   margin-top: 0.625em;
 }
 
-main.main-page section.promote-procedure a:hover, main.main-page section.promote-procedure a:visited, main.main-page section.promote-procedure a:active, main.main-page section.promote-procedure a:focus {
+main.main-page section.promote-procedure a:visited, main.main-page section.promote-procedure a:hover, main.main-page section.promote-procedure a:active, main.main-page section.promote-procedure a:focus {
   text-decoration: none;
 }
 
-main.main-page button:hover, main.main-page button:visited, main.main-page button:active {
+main.main-page button:visited, main.main-page button:hover, main.main-page button:active {
   background-color: #073457;
   text-decoration: none;
 }
 
-main.main-page button a:hover, main.main-page button a:visited, main.main-page button a:active {
+main.main-page button a:visited, main.main-page button a:hover, main.main-page button a:active {
   text-decoration: none;
 }
 
@@ -937,7 +937,7 @@ main.main-page .hvrbox.active .hvrbox-text_mobile {
   text-decoration: none;
 }
 
-#procedure-page button a:hover, #procedure-page button a:visited, #procedure-page button a:active, #procedure-page button a:focus {
+#procedure-page button a:visited, #procedure-page button a:hover, #procedure-page button a:active, #procedure-page button a:focus {
   text-decoration: none;
 }
 
@@ -989,7 +989,7 @@ main.main-page .hvrbox.active .hvrbox-text_mobile {
   cursor: pointer;
 }
 
-#patient-page a:hover, #patient-page a:visited, #patient-page a:active, #patient-page a:focus {
+#patient-page a:visited, #patient-page a:hover, #patient-page a:active, #patient-page a:focus {
   text-decoration: none;
 }
 
@@ -1004,7 +1004,7 @@ main.main-page .hvrbox.active .hvrbox-text_mobile {
   cursor: pointer;
 }
 
-#referral-page a:hover, #referral-page a:visited, #referral-page a:active, #referral-page a:focus {
+#referral-page a:visited, #referral-page a:hover, #referral-page a:active, #referral-page a:focus {
   text-decoration: none;
 }
 
