@@ -51,8 +51,8 @@ em {
 a {
   @include color(transparent, $mainColorBase);
 
-  &:active,
-  &:hover {
+  &:hover,
+  &:active {
     outline: 0;
     color: $darkerColorBase;
   }
@@ -693,10 +693,10 @@ main.main-page {
     }
 
     a {
-     &:hover,
-     &:visited,
-     &:active,
-     &:focus {
+      &:visited,
+      &:hover,
+      &:active,
+      &:focus{
         text-decoration: none;
       }
     }
@@ -705,8 +705,8 @@ main.main-page {
   button {
     @extend %blueButton;
 
-    &:hover,
     &:visited,
+    &:hover,
     &:active {
       background-color: $darkerColorBase;
       text-decoration: none;
@@ -715,8 +715,8 @@ main.main-page {
     a {
       @extend %blueButtonLink;
 
-      &:hover,
       &:visited,
+      &:hover,
       &:active {
         text-decoration: none;
       }
@@ -905,8 +905,8 @@ main.main-page {
     a{
       @extend %blueButtonLink;
 
-      &:hover,
       &:visited,
+      &:hover,
       &:active,
       &:focus {
         text-decoration: none;
@@ -974,8 +974,8 @@ main.main-page {
       @extend %downloadFormLink;
     }
 
-    &:hover,
     &:visited,
+    &:hover,
     &:active,
     &:focus{
       text-decoration: none;
@@ -1005,8 +1005,8 @@ main.main-page {
       @extend %downloadFormLink;
     }
 
-    &:hover,
     &:visited,
+    &:hover,
     &:active,
     &:focus{
       text-decoration: none;
