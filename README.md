@@ -3,7 +3,7 @@
 
 [DrFortinoPeriodontics](http://www.drfortinoperiodontics.com/) is a responsive dental website created for a client.
 
-![DrFortinoPeriodontics Landing Page](https://bernadetteestacio.site/periodontics.a30f5e84.png)
+![DrFortinoPeriodontics Landing Page](https://bernadetteestacio.site/assets/img/portfolio/periodontics.png)
 
 **Front-End:**
 
